@@ -1,0 +1,22 @@
+[
+    {
+        "name": "name",
+        "type": "string",
+        "required": true
+    },
+    {
+        "name": "email",
+        "type": "string",
+        "required": true
+    },
+    {
+        "name": "phone",
+        "type": "string",
+        "required": true
+    },
+    {
+        "name": "message",
+        "type": "string",
+        "required": true
+    }
+]
