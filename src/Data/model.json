@@ -1,22 +1,22 @@
 [
     {
         "name": "name",
-        "type": "string",
+        "type": "text",
         "required": true
     },
     {
         "name": "email",
-        "type": "string",
+        "type": "text",
         "required": true
     },
     {
         "name": "phone",
-        "type": "string",
+        "type": "text",
         "required": true
     },
     {
         "name": "message",
-        "type": "string",
+        "type": "textarea",
         "required": true
     }
 ]

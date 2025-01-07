@@ -5,7 +5,7 @@ namespace Provider;
 
 final class DataLoaderJson extends DataLoader {
     
-    public function _construct(string $filename) {
-        $this->content = json_decode(file_get_contents($filename), true);
+    public function __construct(string $path) {
+        $this->content = json_decode(file_get_contents($path), true);
     }
 }
