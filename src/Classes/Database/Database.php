@@ -2,9 +2,6 @@
 
 namespace Classes\Database;
 
-use PDO;
-use PDOException;
-
 abstract class Database implements IDatabase
 {
 
