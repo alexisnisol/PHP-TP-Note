@@ -1,0 +1,70 @@
+[  
+   {
+      "id": 1,
+      "question_type": "iPhone 9",
+      "question_text": "Quel est le plus grand océan du monde ?",
+      "choices": [
+        "Océan Indien",
+        "Océan Pacifique",
+        "Océan Atlantique",
+        "Océan Arctique"
+      ],
+      "goodAnswer": "Pacifique"
+    },
+
+    {
+        "id": 2,
+        "question_type": "iPhone 9",
+        "question_text": "Un smartphone Apple avec un design classique, un écran Retina HD de 4,7 pouces, un processeur A13 Bionic, et une caméra de 12 MP pour des photos de haute qualité.",
+        "choices": [
+          "data/img/iphone9/iphone9_p.jpg",
+          "data/img/iphone9/iphone9_2.jpeg",
+          "data/img/iphone9/iphone9_3.jpeg",
+          "data/img/iphone9/iphone9_4.jpeg",
+          "data/img/iphone9/iphone9_5.jpeg"
+        ],
+        "goodAnswer": 12.96
+      },
+
+      {
+        "id": 3,
+        "question_type": "iPhone 9",
+        "question_text": "Un smartphone Apple avec un design classique, un écran Retina HD de 4,7 pouces, un processeur A13 Bionic, et une caméra de 12 MP pour des photos de haute qualité.",
+        "choices": [
+          "data/img/iphone9/iphone9_p.jpg",
+          "data/img/iphone9/iphone9_2.jpeg",
+          "data/img/iphone9/iphone9_3.jpeg",
+          "data/img/iphone9/iphone9_4.jpeg",
+          "data/img/iphone9/iphone9_5.jpeg"
+        ],
+        "goodAnswer": 12.96
+      },
+
+      {
+        "id": 4,
+        "question_type": "iPhone 9",
+        "question_text": "Un smartphone Apple avec un design classique, un écran Retina HD de 4,7 pouces, un processeur A13 Bionic, et une caméra de 12 MP pour des photos de haute qualité.",
+        "choices": [
+          "data/img/iphone9/iphone9_p.jpg",
+          "data/img/iphone9/iphone9_2.jpeg",
+          "data/img/iphone9/iphone9_3.jpeg",
+          "data/img/iphone9/iphone9_4.jpeg",
+          "data/img/iphone9/iphone9_5.jpeg"
+        ],
+        "goodAnswer": 12.96
+      },
+
+      {
+        "id": 5,
+        "question_type": "iPhone 9",
+        "question_text": "Un smartphone Apple avec un design classique, un écran Retina HD de 4,7 pouces, un processeur A13 Bionic, et une caméra de 12 MP pour des photos de haute qualité.",
+        "choices": [
+          "data/img/iphone9/iphone9_p.jpg",
+          "data/img/iphone9/iphone9_2.jpeg",
+          "data/img/iphone9/iphone9_3.jpeg",
+          "data/img/iphone9/iphone9_4.jpeg",
+          "data/img/iphone9/iphone9_5.jpeg"
+        ],
+        "goodAnswer": 12.96
+      }
+    ]
