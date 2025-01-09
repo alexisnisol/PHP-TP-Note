@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="/static/css/connexion.css">
+    <link rel="stylesheet" type="text/css" href="src/static/css/connexion.css">
     <title>Quizz</title>
 </head>
 

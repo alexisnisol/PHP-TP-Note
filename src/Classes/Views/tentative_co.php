@@ -1,8 +1,6 @@
 <?php
-    require_once 'src/Classes/Database/SQLiteDatabase.php';
 
-    session_start();
-
+    
     $nom = $_POST['nom'];
     $mdp = $_POST['passwd'];
     
