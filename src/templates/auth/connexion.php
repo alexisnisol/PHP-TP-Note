@@ -1,26 +1,27 @@
-<!DOCTYPE html>
-<html lang="fr">
+<?php
 
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="src/static/css/connexion.css">
-    <title>Quizz</title>
-</head>
+use Classes\Controllers\Auth\AuthForm;
 
-<body>
+//if is post request
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    //get post data
+    $nom = $_POST['nom'];
+    $password = $_POST['passwd'];
+    $error = AuthForm::checkLoginForm($nom, $password);
+}
+?>
     <div class="header">
         <h1>Connexion a notre quizz</h1>
     </div>
     <div class="content">
 
-        <form class="connexion" method="POST" action="tentative_co.php">
+        <form class="connexion" method="POST" action="#">
             <p>CONNEXION</p>
             <input type="text" name="nom" id="nom" placeholder="Nom" />
             <input type="password" name="passwd" id="passwd" placeholder="Mot de passe" />
             <button type="button" name="toggle-password" id="toggle-password" class="toggle-password" data-target="passwd">afficher</button>
-            <?php session_start();
-            if (!empty($_SESSION['connexion_fail'])) {
-                $_SESSION['connexion_fail'] = false;
+        <?php 
+        if (isset($error)) {
                 echo "<p class='fail'>L'identifiant ou le mot de passe est incorrect</p>";
             } ?>
             <input type="submit" value="Se connecter" />

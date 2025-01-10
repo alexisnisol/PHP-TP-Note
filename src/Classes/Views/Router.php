@@ -23,8 +23,10 @@ class Router {
     {
 
         ob_start();
-        require ROOT . '/Action/' . $view;
+        require ROOT . '/templates/' . $view;
         $content = ob_get_clean();
+
+        
 
         self::$template->setLayout($layout);
         self::$template->setTitle($title);
@@ -38,14 +40,21 @@ class Router {
         if (isset($_GET['action']) && $_GET['action'] !== '') {
             $action = $_GET['action'];
         } else {
-            $action = 'home';
+            $action = 'connexion';
         }
+
         switch ($action) {
             case 'home':
                 self::render('home.php', 'Accueil', ['index.css']);
                 break;
             case 'quiz':
                 self::render('quiz.php', 'Quiz', ['quiz.css']);
+                break;
+            case 'connexion':
+                self::render('auth/connexion.php', 'connexion', ['connexion.css']);
+                break;
+            case 'listeQuiz':
+                self::render('auth/ListeQuiz.php', 'listeQuiz', ['Table_Spec.css']);
                 break;
             default:
                 self::render('404.php', 'Page introuvable', ['404.css']);

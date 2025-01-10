@@ -26,7 +26,7 @@ CREATE TABLE QUESTION
 CREATE TABLE UTILISATEUR
 (
     uuid   INT NOT NULL,
-    nom_U  VARCHAR(42),
+    nom_U  VARCHAR(42) UNIQUE,
     mdp    VARCHAR(42),
     type_U VARCHAR(42),
     PRIMARY KEY (uuid)

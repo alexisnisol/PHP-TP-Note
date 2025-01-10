@@ -24,7 +24,7 @@ class App {
         return self::$app;
     }
 
-    private function getBD() {
+    public function getBD() {
         if ($this->db === null) {
             $this->db = new SQLiteDatabase(ConfigBD::$DB_FILE);
             $this->db->loadContents();
