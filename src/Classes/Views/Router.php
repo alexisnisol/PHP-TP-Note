@@ -16,12 +16,17 @@ class Router {
     
     public static function render(string $view, string $title, array $cssFiles = [])
     {
+        self::renderWithTemplate($view, 'main', $title, $cssFiles);
+    }
+
+    public static function renderWithTemplate(string $view, string $layout, string $title, array $cssFiles = [])
+    {
 
         ob_start();
         require ROOT . '/Action/' . $view;
         $content = ob_get_clean();
 
-        self::$template->setLayout('main');
+        self::$template->setLayout($layout);
         self::$template->setTitle($title);
         self::$template->setCssFiles($cssFiles);
         self::$template->setContent($content);
