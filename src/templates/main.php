@@ -3,20 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/header.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <?php
+        if (!empty($cssFiles)) {
+            foreach ($cssFiles as $cssFile) {
+                echo '<link rel="stylesheet" href="./static/css/' . $cssFile . '">';
+            }
+        }
+    ?>
+    <title><?php echo $title ?? null ?></title>
 </head>
 <body>
+
     <header>
-        <ul>
-            <li>Test</li>
-            <li>Test</li>
-        </ul>
+        <div class="logo">
+            <img src="../static/img/logo.png" alt="Logo">
+            <h1>PHP</h1>
+        </div>
+        <nav class="nav-menu">
+            <div class="list_nav">
+            <ul>
+                <li><a href="./index.php">Accueil</a></li>
+                <li><a>Planning</a></li>
+                <li><a>Inscription</a></li>
+            </ul>
+            </div>
+        </nav>
+        <a class="btn_connexion" >Connexion</a>
     </header>
+
+
+
     <main>
         <?php echo $content ?? null ?>
     </main>
+
     <footer>
-        Voici mon footer.
+    <div class = "col1">
+        <H3>
+            PHP TP noté
+        </H3>
+        <img src="../static/img/logo.png" alt="logo">
+    </div>
+
+    <div class = "col2">
+        <H3>
+            Contacts
+        </H3>
+        <p>02 38 49 44 62</p>
+        <p>Rue d'issoudun, 45067 Orléans cedex 02</p>
+        
+    </div>
+    <div class = "col3">
+        <H3>
+            Membres de l'équipe
+        </H3>
+        <ul>
+            <li>Alexis Nisol</li>
+            <li> Nicolas Lepage</li>
+            <li>Alexy Wiciak</li>
+        </ul>
+
+    </div>
+    <div class = "horizontal">
+        <p><strong>&copy; 2024 - Tous droits réservés</strong></p>     
+    </div>
+
     </footer>
 </body>
 </html>
