@@ -20,7 +20,7 @@ CREATE TABLE QUESTION
     choices VARCHAR(42),
     correct VARCHAR(42),
     PRIMARY KEY (id_Q, id_Quiz),
-    WITH (id_Quiz) REFERENCES QUIZ (id_Quiz)
+    FOREIGN KEY (id_Quiz) REFERENCES QUIZ (id_Quiz)
 );
 
 CREATE TABLE UTILISATEUR
