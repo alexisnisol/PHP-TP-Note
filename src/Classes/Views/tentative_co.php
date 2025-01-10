@@ -16,11 +16,11 @@
     $_SESSION["nom"] = $nom;
 
     if ($mdp == $bd_mdp) {
-        if ($role == "ADM") {
+        if ($role == "ADM"){
             header('');
             exit;
         } else {
-            header('');
+            header('/ListeaQuiz');
             exit;}
     } else {
         $_POST['fail'] = 'tr';
