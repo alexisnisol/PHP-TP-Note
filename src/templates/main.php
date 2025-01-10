@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/header.css">
-    <link rel="stylesheet" href="../static/css/footer.css">
+    <link rel="stylesheet" href="./static/css/header.css">
+    <link rel="stylesheet" href="./static/css/footer.css">
     <?php
         if (!empty($cssFiles)) {
             foreach ($cssFiles as $cssFile) {
@@ -18,7 +18,7 @@
 
     <header>
         <div class="logo">
-            <img src="../static/img/logo.png" alt="Logo">
+            <img src="./static/img/logo.png" alt="Logo">
             <h1>PHP</h1>
         </div>
         <nav class="nav-menu">
@@ -44,7 +44,7 @@
         <H3>
             PHP TP noté
         </H3>
-        <img src="../static/img/logo.png" alt="logo">
+        <img src="./static/img/logo.png" alt="logo">
     </div>
 
     <div class = "col2">
