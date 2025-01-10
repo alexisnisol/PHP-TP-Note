@@ -1,7 +1,7 @@
 <?php
 declare(strict_type=1);
 
-namespace Provider;
+namespace Classes\Provider;
 
 final class DataLoaderJson extends DataLoader {
     
