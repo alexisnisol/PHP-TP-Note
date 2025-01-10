@@ -25,7 +25,6 @@
             <div class="list_nav">
             <ul>
                 <li><a href="./index.php">Accueil</a></li>
-                <li><a>Planning</a></li>
                 <li><a>Inscription</a></li>
             </ul>
             </div>
