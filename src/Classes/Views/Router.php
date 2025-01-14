@@ -51,6 +51,9 @@ class Router {
             case 'connexion':
                 self::render('auth/connexion.php', 'connexion', ['connexion.css']);
                 break;
+            case 'inscription':
+                self::render('auth/inscription.php', 'inscription', ['connexion.css']);
+                break;
             default:
                 self::render('404.php', 'Page introuvable', ['404.css']);
                 break;
