@@ -12,18 +12,14 @@ class AuthForm {
         if($user){
             //verify password
             if(password_verify($password, $user['mdp'])){
-                error_log('User connected : ' . $user['nom']);
                 //TODO : store user in session instead of user_id (SESSION['user']['id'])
                 $_SESSION['nom'] = $user['nom'];
                 $_SESSION['type'] = $user['type'];
                 if ($user['type'] == 'ADM') {
-                    error_log('Admin connected');
-                    header('index.php?action=admin');}
+                    header('Location: index.php?action=admin');}
                 elseif ($user['type'] == 'USER') {
-                    error_log('User connected');
                     header('Location: index.php?action=listeQuiz');
                 } else {
-                    error_log('nobody connected');
                 header('Location: /');
             }}else{
                 $error = 'Mot de passe incorrect';
