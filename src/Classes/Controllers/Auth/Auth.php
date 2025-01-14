@@ -7,7 +7,8 @@ use App;
 class Auth
 {
 
-    static function isUserLoggedIn() {
+    static function isUserLoggedIn(): bool
+    {
         return isset($_SESSION['nom']);
     }
 
