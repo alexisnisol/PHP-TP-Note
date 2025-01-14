@@ -1,3 +1,10 @@
+<?php
+
+use Classes\Controllers\Quiz\ListeQuiz;
+
+$liste_quiz = ListeQuiz::getAllQuiz();
+?>
+
 <main>
     <div class="main-liste-spec">
         <h1 id="les-specs-orga">Les quiz</h1>
@@ -10,31 +17,17 @@
                 </tr>
             </thead>
             <tbody>
-            <?php $reponse = $bdd->query('SELECT nameQ, theme, max(score),id_Quiz FROM QUIZ NATURAL JOIN PARTICIPE where uuid = "' . $_SESSION['idU'] . '"');
-                while ($donnees = $reponse->fetch()) {
-            ?>
-                <tr>
-                    <td><?php echo $donnees['nameQ']; ?></td>
-                    <td><?php echo $donnees['theme']; ?></td>
-                    <td><?php echo $donnees['score']; ?></td>
-                    <td><a href="index.php?action=quiz&id=".<?php echo $donnees['id_Quiz']; ?>>Participer</a></td>
-                </tr>
             <?php
-                }
-            $reponse->closeCursor();
+                foreach ($liste_quiz as $donnees) {
             ?>
-            <?php $reponse2 = $bdd->query('(SELECT * FROM QUIZ) minus (SELECT * FROM QUIZ NATURAL JOIN PARTICIPE where uuid = "' . $_SESSION['idU'] . '")');
-            while ($donnees = $reponse2->fetch()) {
-                ?>
                     <tr>
                         <td><?php echo $donnees['nameQ']; ?></td>
                         <td><?php echo $donnees['theme']; ?></td>
                         <td>NON Participer</td>
                         <td><a href="index.php?action=quiz,id=".<?php echo $donnees['id_Quiz']; ?>>Participer</a></td>
-            </tr>
-                <?php
-            }
-            $reponse->closeCursor();
+                    </tr>
+            <?php
+                }
             ?>
             </tbody>
         </table>
