@@ -2,43 +2,58 @@
 
 use Classes\Controllers\Auth\AuthForm;
 
-//if is post request
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
-    //get post data
+// Si la méthode est POST, traiter les données
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nom = $_POST['nom'];
     $password = $_POST['passwd'];
     $error = AuthForm::checkLoginForm($nom, $password);
 }
 ?>
-    <div class="header">
-        <h1>Connexion a notre quizz</h1>
-    </div>
-    <div class="content">
-
-        <form class="connexion" method="POST" action="#">
-            <p>CONNEXION</p>
-            <input type="text" name="nom" id="nom" placeholder="Nom" />
-            <input type="password" name="passwd" id="passwd" placeholder="Mot de passe" />
-            <button type="button" name="toggle-password" id="toggle-password" class="toggle-password" data-target="passwd">afficher</button>
-        <?php 
-        if (isset($error)) {
-                echo "<p class='fail'>L'identifiant ou le mot de passe est incorrect</p>";
-            } ?>
-            <input type="submit" value="Se connecter" />
-        </form>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion au Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page">
+        <div class="form-container">
+            <h2>Se connecter</h2>
+            <form action="#" method="post">
+                <div class="input-container">
+                    <input name="email" type="email" placeholder="Adresse mail" required>
+                </div>
+                <div class="input-container">
+                    <div class="password-wrapper">
+                        <input id="password" name="password" type="password" placeholder="Mot de passe" required>
+                        <button type="button" class="password-toggle-btn" data-target="password">👁</button>
+                    </div>
+                </div>
+                <?php 
+                if (isset($error)) {
+                    echo '<p class="error-message">*' . $error . '</p>';
+                }
+                ?>
+                <button type="submit">Se connecter</button>
+            </form>
+            
+            <a href="./index.php?action=register" class="register-link">Pas encore de compte ? Inscrivez-vous</a>
+        </div>
     </div>
     
     <script>
-    document.querySelectorAll('.toggle-password').forEach(button => {
+    document.querySelectorAll('.password-toggle-btn').forEach(button => {
         button.addEventListener('click', () => {
             const targetId = button.getAttribute('data-target');
             const passwordField = document.getElementById(targetId);
             if (passwordField.type === 'password') {
                 passwordField.type = 'text';
-                button.textContent = 'Cacher';
+                button.textContent = '🙈';
             } else {
                 passwordField.type = 'password';
-                button.textContent = 'Afficher';
+                button.textContent = '👁';
             }
         });
     });
