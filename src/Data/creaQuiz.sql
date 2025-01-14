@@ -25,7 +25,7 @@ CREATE TABLE QUESTION
 
 CREATE TABLE UTILISATEUR
 (
-    uuid   INT NOT NULL,
+    uuid   VARCHAR NOT NULL,
     nom_U  VARCHAR(42) UNIQUE,
     mdp    VARCHAR(42),
     type_U VARCHAR(42),
@@ -35,7 +35,7 @@ CREATE TABLE UTILISATEUR
 CREATE TABLE PARTICIPE
 (
     id_Quiz INT NOT NULL,
-    uuid    INT NOT NULL,
+    uuid    VARCHAR NOT NULL,
     score   FLOAT,
     date    DATE DEFAULT (CURRENT_DATE),
     PRIMARY KEY (id_Quiz, uuid, date),
