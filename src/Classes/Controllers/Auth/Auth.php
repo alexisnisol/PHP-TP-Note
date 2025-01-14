@@ -35,7 +35,7 @@ class Auth
         $user = $query->fetch();
         if($user){
                 $utilisateur = ['nom' => $user['nom_U'],'mdp' => $user['mdp'],'type' => $user['type_U']];
-        } else {
+            } else {
             $utilisateur = null;
         }
 
