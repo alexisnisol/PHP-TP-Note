@@ -4,7 +4,7 @@ use Classes\Controllers\Quiz\ListeQuiz;
 use Classes\Controllers\Auth\Auth;
 
 
-$liste_quiz = ListeQuiz::getAllQuiz(Auth::getCurrentId());
+$liste_quiz = ListeQuiz::getAllPlayerQuiz(Auth::getCurrentId());
 ?>
 
 <main>
@@ -25,8 +25,18 @@ $liste_quiz = ListeQuiz::getAllQuiz(Auth::getCurrentId());
                     <tr>
                         <td><?php echo $donnees['name_Q']; ?></td>
                         <td><?php echo $donnees['theme']; ?></td>
-                        <td>NON Participer</td>
-                        <td><a href="index.php?action=quiz&id=".<?php echo $donnees['id_Quiz']; ?>>Participer</a></td>
+                        <td><?php echo $donnees['score'] ? $donnees['score'] . '/20': 'Non participé'; ?></td>
+                        <?php
+                        if (Auth::isUserLoggedIn()) {
+                            if ($donnees['score'] == null) {
+                                echo '<td><a href="index.php?action=quiz&id=' . $donnees['id_Quiz'] . '">Participer</a></td>';
+                            } else {
+                                echo '<td><a href="index.php?action=quiz&id=' . $donnees['id_Quiz'] . '">Refaire</a></td>';
+                            }
+                        } else {
+                            echo '<td><a href="index.php?action=connexion">Se connecter</a></td>';
+                        }
+                        ?>
                     </tr>
             <?php
                 }
