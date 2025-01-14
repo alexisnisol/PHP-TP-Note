@@ -56,8 +56,11 @@ class Router {
             case 'listeQuiz':
                 self::render('auth/ListeQuiz.php', 'listeQuiz', ['Table_Spec.css']);
                 break;
+            case 'creaQuiz':
+                self::render('auth/creaQuiz.php', 'creaQuiz', ['Table_Spec.css']);
+                break;
             case 'inscription':
-                self::render('auth/inscription.php', 'inscription', ['connexion.css']);
+                self::render('auth/inscription.php', 'inscription', ['Create_Spec.css']);
                 break;
             default:
                 self::render('404.php', 'Page introuvable', ['404.css']);

@@ -26,10 +26,14 @@
             <ul>
                 <li><a href="./index.php">Accueil</a></li>
                 <li><a href="index.php?action=inscription">Inscription</a></li>
+                <?php 
+                if($_SESSION['type']=='ADM'){
+                    echo '<li><a href="index.php?action=inscription">Créer un quiz</a></li>';
+                }?>
             </ul>
             </div>
         </nav>
-        <a class="btn_connexion" >Connexion</a>
+        <a href="index.php?action=connexion" class="btn_connexion" >Connexion</a>
     </header>
 
 
