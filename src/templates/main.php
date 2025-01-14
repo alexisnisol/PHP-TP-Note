@@ -29,7 +29,7 @@
             </ul>
             </div>
         </nav>
-        <a class="btn_connexion" >Connexion</a>
+        <a href="index.php?action=connexion" class="btn_connexion" >Connexion</a>
     </header>
 
 

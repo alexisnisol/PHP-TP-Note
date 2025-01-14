@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <div class="page">
         <div class="form-container">
-            <h2>Se connecter</h2>
+            <h2>Se connecter au Quiz</h2>
             <form action="#" method="post">
                 <div class="input-container">
                     <input name="email" type="email" placeholder="Adresse mail" required>
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <button type="submit">Se connecter</button>
             </form>
             
-            <a href="./index.php?action=register" class="register-link">Pas encore de compte ? Inscrivez-vous</a>
+            <a href="./index.php?action=inscription" class="register-link">Pas encore de compte ? Inscrivez-vous</a>
         </div>
     </div>
     

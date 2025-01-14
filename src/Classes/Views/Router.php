@@ -49,10 +49,10 @@ class Router {
                 self::render('quiz/quiz.php', 'Quiz', ['quiz.css']);
                 break;
             case 'connexion':
-                self::render('auth/connexion.php', 'connexion', ['connexion.css']);
+                self::render('auth/connexion.php', 'connexion', ['form.css']);
                 break;
             case 'inscription':
-                self::render('auth/inscription.php', 'inscription', ['connexion.css']);
+                self::render('auth/inscription.php', 'inscription', ['form.css']);
                 break;
             default:
                 self::render('404.php', 'Page introuvable', ['404.css']);
