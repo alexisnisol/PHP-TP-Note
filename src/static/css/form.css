@@ -104,7 +104,7 @@ select {
 /* Bouton pour montrer/cacher le mot de passe */
 .password-toggle-btn {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 23rem;
     transform: translateY(-50%);
     background: transparent;
