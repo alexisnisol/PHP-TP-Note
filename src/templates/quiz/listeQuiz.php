@@ -17,7 +17,7 @@
                     <td><?php echo $donnees['nameQ']; ?></td>
                     <td><?php echo $donnees['theme']; ?></td>
                     <td><?php echo $donnees['score']; ?></td>
-                    <td><a href="quiz?action=quiz&id=".<?php echo $donnees['id_Quiz']; ?>>Participer</a></td>
+                    <td><a href="index.php?action=quiz&id=".<?php echo $donnees['id_Quiz']; ?>>Participer</a></td>
                 </tr>
             <?php
                 }
