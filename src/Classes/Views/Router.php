@@ -26,8 +26,6 @@ class Router {
         require ROOT . '/templates/' . $view;
         $content = ob_get_clean();
 
-        
-
         self::$template->setLayout($layout);
         self::$template->setTitle($title);
         self::$template->setCssFiles($cssFiles);
@@ -40,15 +38,15 @@ class Router {
         if (isset($_GET['action']) && $_GET['action'] !== '') {
             $action = $_GET['action'];
         } else {
-            $action = 'connexion';
+            $action = 'home';
         }
 
         switch ($action) {
             case 'home':
-                self::render('home.php', 'Accueil', ['index.css']);
+                self::render('quiz/listeQuiz.php', 'Liste des quiz', ['table_quiz.css']);
                 break;
             case 'quiz':
-                self::render('quiz.php', 'Quiz', ['quiz.css']);
+                self::render('quiz/quiz.php', 'Quiz', ['quiz.css']);
                 break;
             case 'connexion':
                 self::render('auth/connexion.php', 'connexion', ['connexion.css']);
@@ -59,6 +57,7 @@ class Router {
             case 'creaQuiz':
                 self::render('auth/creaQuiz.php', 'creaQuiz', ['Table_Spec.css']);
                 break;
+
             case 'inscription':
                 self::render('auth/inscription.php', 'inscription', ['Create_Spec.css']);
                 break;
