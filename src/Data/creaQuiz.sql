@@ -42,3 +42,15 @@ CREATE TABLE PARTICIPE
     FOREIGN KEY (id_Quiz) REFERENCES QUIZ (id_Quiz),
     FOREIGN KEY (uuid) REFERENCES UTILISATEUR (uuid)
 );
+
+
+insert into QUIZ values (1, 'Quiz1', 'Math');
+insert into QUIZ values (2, 'Quiz2', 'Math');
+insert into QUIZ values (3, 'Quiz3', 'Math');
+
+insert into QUESTION values (1, 1, 'text', 'Question1', 'A;B;C;D', 'A');
+insert into QUESTION values (2, 1, 'text', 'Question2', 'A;B;C;D', 'B');
+insert into QUESTION values (3, 1, 'text', 'Question3', 'A;B;C;D', 'C');
+insert into QUESTION values (1, 2, 'text', 'Question1', 'A;B;C;D', 'A');
+insert into QUESTION values (2, 2, 'text', 'Question2', 'A;B;C;D', 'B');
+insert into QUESTION values (3, 2, 'text', 'Question3', 'A;B;C;D', 'C');

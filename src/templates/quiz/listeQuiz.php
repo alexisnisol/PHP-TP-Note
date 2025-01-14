@@ -1,8 +1,10 @@
 <?php
 
 use Classes\Controllers\Quiz\ListeQuiz;
+use Classes\Controllers\Auth\Auth;
 
-$liste_quiz = ListeQuiz::getAllQuiz();
+
+$liste_quiz = ListeQuiz::getAllQuiz(Auth::getCurrentId());
 ?>
 
 <main>
@@ -21,10 +23,10 @@ $liste_quiz = ListeQuiz::getAllQuiz();
                 foreach ($liste_quiz as $donnees) {
             ?>
                     <tr>
-                        <td><?php echo $donnees['nameQ']; ?></td>
+                        <td><?php echo $donnees['name_Q']; ?></td>
                         <td><?php echo $donnees['theme']; ?></td>
                         <td>NON Participer</td>
-                        <td><a href="index.php?action=quiz,id=".<?php echo $donnees['id_Quiz']; ?>>Participer</a></td>
+                        <td><a href="index.php?action=quiz&id=".<?php echo $donnees['id_Quiz']; ?>>Participer</a></td>
                     </tr>
             <?php
                 }

@@ -11,10 +11,17 @@ class Auth
         return isset($_SESSION['nom']);
     }
 
+    static function getCurrentId() {
+        if (self::isUserLoggedIn()) {
+            return $_SESSION['uuid'];
+        }
+        return null;
+    }
+
     static function getCurrentUser() {
         if (self::isUserLoggedIn()) {
             return [
-                'id' => $_SESSION['uuId'],
+                'id' => $_SESSION['uuid'],
                 'nom' => $_SESSION['nom'],
                 'score' => $_SESSION['score']
             ];

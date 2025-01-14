@@ -12,13 +12,15 @@ class AuthForm {
         if($user){
             //verify password
             if(password_verify($password, $user['mdp'])){
-                //TODO : store user in session instead of user_id (SESSION['user']['id'])
+                
+                $_SESSION['uuid'] = $user['uuid'];
                 $_SESSION['nom'] = $user['nom'];
                 $_SESSION['type'] = $user['type'];
+
                 if ($user['type'] == 'ADM') {
                     header('Location: index.php?action=admin');}
                 elseif ($user['type'] == 'USER') {
-                    header('Location: index.php?action=listeQuiz');
+                    header('Location: index.php');
                 } else {
                 header('Location: /');
             }}else{
