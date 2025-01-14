@@ -23,7 +23,7 @@ class Auth
             return [
                 'id' => $_SESSION['uuid'],
                 'nom' => $_SESSION['nom'],
-                'score' => $_SESSION['score']
+                'type' => $_SESSION['type']
             ];
         }
         return null;
@@ -41,7 +41,7 @@ class Auth
         $query->execute(array(':nom' => $nom));
         $user = $query->fetch();
         if($user){
-                $utilisateur = ['nom' => $user['nom_U'],'mdp' => $user['mdp'],'type' => $user['type_U']];
+                $utilisateur = ['uuid' => $user['uuid'], 'nom' => $user['nom_U'], 'mdp' => $user['mdp'],'type' => $user['type_U']];
             } else {
             $utilisateur = null;
         }
