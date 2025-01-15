@@ -52,6 +52,7 @@ class Router
                 self::render('quiz/quiz.php', 'Quiz', ['quiz.css']);
                 break;
             case "resultat_quiz":
+                Auth::checkUserLoggedIn();
                 self::render('quiz/resultat_quiz.php', 'Résultat du quiz', ['quiz.css']);
                 break;
             case 'quizAdmin':
