@@ -19,6 +19,28 @@ class ListeQuiz
         return $query->fetch();
     }
 
+    static function getAllParticipations($idPlayer)
+    {
+        $query = App::getApp()->getBD()->prepare("
+        SELECT
+            QUIZ.name_Q,
+            QUIZ.theme,
+            PARTICIPE.score,
+            PARTICIPE.date,
+            COUNT(QUESTION.id_Q) AS totalQ
+        FROM PARTICIPE
+                 JOIN QUIZ ON PARTICIPE.id_Quiz = QUIZ.id_Quiz
+                JOIN QUESTION ON QUIZ.id_Quiz = QUESTION.id_Quiz
+        WHERE PARTICIPE.uuid = :idPlayer
+        GROUP BY date, QUIZ.name_Q, QUIZ.theme, PARTICIPE.score
+        ORDER BY 
+            date DESC
+        ");
+        $query->execute([':idPlayer' => $idPlayer]);
+        return $query->fetchAll();
+
+    }
+
     static function getAllPlayerQuizWithTotalQuestions($uuid)
     {
         $query = App::getApp()->getBD()->prepare("
