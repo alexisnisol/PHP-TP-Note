@@ -2,8 +2,6 @@
 
 namespace Classes\Tools\type;
 
-use Classes\Tools\GenericQuestion;
-
 enum TypeEnum: string
 {
     case checkbox = InputSelection::ADMIN_FORM;
