@@ -22,10 +22,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <label for="type">Type de question</label>
                 <input type="select" id="type" name="type">
                 <?php foreach (TypeEnum::getTypes() as $type) { 
-                  echo  "<option value=" . $type . ">" . $type . "</option>";} ?>
+                echo  "<option value=" . $type . ">" . $type . "</option>";} ?>
                 <label for="theme">Theme de votre quiz</label>
                 <input type="text" id="theme" name="theme">
-                
+
 
                 <div id="boutons">
                     <button type="submit" class="bouton-bas" >Créé le quiz</button>

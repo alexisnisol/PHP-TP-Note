@@ -11,8 +11,8 @@ class CreationQuiz
         $id = self::getId();
         $bdd = App::getApp()->getBD();
         $query = $bdd->prepare('INSERT INTO QUIZ (id_Quiz,name_Q,theme) VALUES (:id, :nom, :theme)');
-        $query->execute(array(':nom' => $nom, ':theme' => $theme, ':id' => $id()));
-        header('Location: index.php?idQ='.$id.'action=createQuestion');
+        $query->execute(array(':nom' => $nom, ':theme' => $theme, ':id' => $id));
+        header('Location: index.php?idQ='.$id.'&action=createQuestion');
     }
 
     static function getId() {
