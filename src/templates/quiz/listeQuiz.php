@@ -3,7 +3,7 @@
 use Classes\Controllers\Quiz\ListeQuiz;
 use Classes\Controllers\Quiz\QuizManager;
 use Classes\Controllers\Auth\Auth;
-
+use Classes\Tools\type\TypeEnum;
 
 $liste_quiz = ListeQuiz::getAllPlayerQuiz(Auth::getCurrentId());
 ?>

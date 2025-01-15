@@ -4,7 +4,7 @@ namespace Classes\Tools\type;
 
 final class Checkbox extends InputSelection
 {
-    protected string $type = 'checkbox';
+    protected string $type = TypeEnum::checkbox;
 
     public function checkAnswer($response): bool
     {
