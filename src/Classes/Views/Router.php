@@ -51,6 +51,10 @@ class Router
                 Auth::checkUserLoggedIn();
                 self::render('quiz/quiz.php', 'Quiz', ['quiz.css']);
                 break;
+            case "resultat_quiz":
+                Auth::checkUserLoggedIn();
+                self::render('quiz/resultat_quiz.php', 'Résultat du quiz', ['quiz.css']);
+                break;
             case 'connexion':
                 self::render('auth/connexion.php', 'Connexion', ['form.css']);
                 break;
