@@ -6,7 +6,7 @@ use Classes\Controllers\Admin\CreationQuiz;
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nom = $_POST['nomQ'];
     $theme = $_POST['theme'];
-    CreationQuiz::CreationQuiz($nom, $theme);
+    CreationQuiz::createQuiz($nom, $theme);
 }
 ?>
 
@@ -18,13 +18,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <form method="POST" action="#">
 
             <label for="nomQ">Nom du quiz</label>
-            <input type="text" id="nomQ" name="nomQ">
+            <input type="text" id="nomQ" name="nomQ" required>
 
             <label for="theme">Theme de votre quiz</label>
-            <input type="text" id="theme" name="theme">
+            <input type="text" id="theme" name="theme" required>
 
-            <div id="boutons">
-                <button type="submit" class="bouton-bas" >Créé le quiz</button>
+            <div class="boutons">
+                <button type="submit">Créé le quiz</button>
             </div>
 
         </form>
