@@ -25,7 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="text" id="theme" name="theme">
 
                 <div id="boutons">
-                    <button type="reset" class="bouton-bas">Reinitailiser le formulaire</button>
                     <button type="submit" class="bouton-bas" >Créé le quiz</button>
                 </div>
 
