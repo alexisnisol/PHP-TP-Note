@@ -3,7 +3,9 @@
 //namespace Classes\Tools\type;
 //
 //final class Number extends Input {
-//    protected string $type = 'number';
+//    protected TypeEnum $type = ...;
+//
+//    public const ADMIN_FORM = ...;
 //}
 //
 //?>
