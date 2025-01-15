@@ -3,7 +3,7 @@
 use Classes\Controllers\Admin\CreationQuestion;
 use Classes\Tools\type\TypeEnum;
 
-// Si la méthode est POST, traiter les données
+$idQ = $_GET['idQ'];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $idQ = $_GET['idQ'];
@@ -39,8 +39,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label for="answer">Bonne réponse</label>
             <input type="text" id="answer" name="answer" required>
                 <div id="boutons">
-                    <input type="submit" class="bouton-bas" formaction="" value="Créé le quiz">
-                    <input type="submit" class="bouton-bas" formaction="index.php?action=createQuestion&idQ=' . $idQ" value="Rajouter une question">
+                    <input type="submit" class="bouton-bas" formaction="index.php?action=lastQuestion&idQ=<?php echo $idQ ?>" value="Créé le quiz">
+                    <input type="submit" class="bouton-bas" formaction="index.php?action=createQuestion&idQ=<?php echo $idQ ?>" value="Rajouter une question">
                 </div>
 
             </form>
