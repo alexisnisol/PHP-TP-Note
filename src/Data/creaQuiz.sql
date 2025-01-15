@@ -47,16 +47,39 @@ CREATE TABLE PARTICIPE
 INSERT INTO UTILISATEUR (uuid, nom_U, mdp, type_U) VALUES
 (1, 'adm', '$2y$10$7YSBWl8PeZkFBEmgaMhiQe.mdtAQcm2cJvmYpvoaZ0Dne4frTf2Ge', 'ADM');
 
+--
+-- insert into QUIZ values (1, 'Quiz 1', 'Math');
+-- insert into QUIZ values (2, 'Quiz2', 'Math');
+-- insert into QUIZ values (3, 'Quiz3', 'Math');
+--
+-- insert into QUESTION values (1, 1, 'checkbox', 'Question1', 'A;B;C;D', 'A;B');
+-- insert into QUESTION values (2, 1, 'text', 'Question2', null, 'B');
+-- insert into QUESTION values (3, 1, 'text', 'Question3', null, 'C');
+--
+-- insert into QUESTION values (1, 2, 'text', 'Question1', null, 'A');
+-- insert into QUESTION values (2, 2, 'text', 'Question2', null, 'B');
+-- insert into QUESTION values (3, 2, 'text', 'Question3', null, 'C');
+--
 
-insert into QUIZ values (1, 'Quiz1', 'Math');
-insert into QUIZ values (2, 'Quiz2', 'Math');
-insert into QUIZ values (3, 'Quiz3', 'Math');
+-- Insérer les quiz
+INSERT INTO QUIZ (id_Quiz, name_Q, theme) VALUES
+                                              (1, 'Quiz Animaux', 'Animaux'),
+                                              (2, 'Quiz Villes', 'Villes');
 
-insert into QUESTION values (1, 1, 'checkbox', 'Question1', 'A;B;C;D', 'A;B');
-insert into QUESTION values (2, 1, 'text', 'Question2', null, 'B');
-insert into QUESTION values (3, 1, 'text', 'Question3', null, 'C');
+-- Insérer les questions pour le Quiz Animaux
+INSERT INTO QUESTION (id_Q, id_Quiz, type_Q, label, choices, correct) VALUES
+(1, 1, 'checkbox', 'Quels animaux peuvent nager ?', 'Poisson;Chien;Éléphant', 'Poisson;Chien'),
+(2, 1, 'text', 'Quel animal miaule ?', null, 'chat'),
+(3, 1, 'checkbox', 'Lequel de ces animaux a des plumes ?', 'Oiseau;Serpent;Chien', 'Oiseau'),
+(4, 1, 'text', "De quelle couleur est le cheval d'Henry IV ?", null, 'blanc'),
+(5, 1, 'checkbox', "Quels animaux vivent dans l'océan ?", 'Dauphin;Cheval;Requin', 'Dauphin;Requin');
 
-insert into QUESTION values (1, 2, 'text', 'Question1', null, 'A');
-insert into QUESTION values (2, 2, 'text', 'Question2', null, 'B');
-insert into QUESTION values (3, 2, 'text', 'Question3', null, 'C');
+-- Insérer les questions pour le Quiz Villes
+INSERT INTO QUESTION (id_Q, id_Quiz, type_Q, label, choices, correct) VALUES
+(1, 2, 'checkbox', 'Dans quelle ville peut-on voir la Tour Eiffel ?', 'Paris;New York;Londres', 'Paris'),
+(2, 2, 'text', 'Quelle ville est la capitale de la France ?', null, 'Paris'),
+(3, 2, 'checkbox', 'Quel est le nom de la capitale du Japon ?', 'Séoul;Tokyo;Pékin', 'Tokyo'),
+(4, 2, 'text', 'Dans quelle ville trouve-t-on le Colisée ?', null, 'Rome'),
+(5, 2, 'checkbox', 'Dans quelle ville peut-on voir la Statue de la Liberté ?', 'Paris;Londres;New York', 'New York');
+
 

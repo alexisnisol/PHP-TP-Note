@@ -25,23 +25,21 @@
         <h1>PHP Quiz</h1>
     </div>
     <nav class="nav-menu">
-        <div class="list_nav">
-            <ul>
-                <li><a href="./index.php">Accueil</a></li>
-                <?php
-                if (!Auth::isUserLoggedIn()) {
-                    echo "<li><a href='index.php?action=inscription'>Inscription</a></li>";
-                }else {
-                    echo "<li><a href='index.php?action=historique'>Mon historique</a></li>";
+        <ul>
+            <li><a href="./index.php">Accueil</a></li>
+            <?php
+            if (!Auth::isUserLoggedIn()) {
+                echo "<li><a href='index.php?action=inscription'>Inscription</a></li>";
+            }else {
+                echo "<li><a href='index.php?action=historique'>Mon historique</a></li>";
 
-                    if (Auth::isUserAdmin()) {
-                        echo "<li><a href='index.php?action=quizAdmin'>Gérer</a></li>";
-                    }
+                if (Auth::isUserAdmin()) {
+                    echo "<li><a href='index.php?action=quizAdmin'>Gérer</a></li>";
                 }
+            }
 
-                ?>
-            </ul>
-        </div>
+            ?>
+        </ul>
     </nav>
     <div class="actions">
         <?php
