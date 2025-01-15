@@ -50,5 +50,8 @@ class Auth
         return $utilisateur;
     }
 
+    static function checkIsAdmin() {
+        return self::getCurrentUser()['type'] === 'ADM';
+    }
 }
 ?>

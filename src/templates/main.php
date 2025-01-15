@@ -28,10 +28,12 @@
         <div class="list_nav">
             <ul>
                 <li><a href="./index.php">Accueil</a></li>
-
-                <?php if (!Auth::isUserLoggedIn()) { 
-                    echo "<li><a href='index.php?action=inscription'>Inscription</a></li>"; 
-                } ?>
+                <?php if (!Auth::isUserLoggedIn()) { ?>
+                    <li><a href="index.php?action=inscription">Inscription</a></li>
+                <?php } ?>
+                <?php if (Auth::checkIsAdmin()) { ?>
+                    <li><a href="index.php?action=quizAdmin">Gérer</a></li>
+                <?php } ?>
             </ul>
         </div>
     </nav>

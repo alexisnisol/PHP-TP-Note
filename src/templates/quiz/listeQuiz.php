@@ -10,7 +10,7 @@ $liste_quiz = ListeQuiz::getAllPlayerQuiz(Auth::getCurrentId());
 
 <main>
     <div class="main-liste-spec">
-        <h1 id="les-specs-orga">Les quiz</h1>
+        <h1 id="les-specs-orga">Voici la liste des Quiz disponibles</h1>
         <table id="table-spec">
             <thead>
                 <tr>
