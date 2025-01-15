@@ -16,9 +16,9 @@ class AuthForm {
                 $_SESSION['nom'] = $user['nom'];
                 $_SESSION['type'] = $user['type'];
                 if ($user['type'] == 'ADM') {
-                    header('Location: index.php?action=admin');}
+                    header('Location: index.php?action=home');}
                 elseif ($user['type'] == 'USER') {
-                    header('Location: index.php?action=listeQuiz');
+                    header('Location: index.php?action=home');
                 } else {
                 header('Location: /');
             }}else{

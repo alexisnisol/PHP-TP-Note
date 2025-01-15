@@ -1,23 +1,21 @@
 <main id="create-art">
         <div>
-            <h1>Création d'un artiste</h1>
+            <h1>Création d'un quiz</h1>
             <section class="form-section">
             <form method="POST" action="/Create_ART2">
 
-                <label for="nom-Art">Nom de l'artiste</label>
-                <input type="text" id="nom-Art" name="nom-Art">
+                <label for="nomQ">Nom du quiz</label>
+                <input type="text" id="nomQ" name="nomQ">
 
-                <label for="mail-Art">Mail de l'artiste</label>
-                <input type="email" id="mail-Art" name="mail-Art">
+                <label for="theme">Theme de votre quiz</label>
+                <input type="text" id="theme" name="theme">
 
-                <label for="nb_Tec">Nombre de Technicien</label>
-                <input type="number" id="nb_Tec" name="nb_Tec">
+                <label for="nb">Nombre de Question</label>
+                <input type="number" id="nb" name="nb">
 
-                <label for="nb_ART">Nombre de Personne dans le grope</label>
-                <input type="number" id="nb_ART" name="nb_ART">
                 <div id="boutons">
                     <button type="reset" class="bouton-bas">Reinitailiser le formulaire</button>
-                    <button type="submit" class="bouton-bas" >Créé l'artiste</button>
+                    <button type="submit" class="bouton-bas" >Créé le quiz</button>
                 </div>
 
             </form>

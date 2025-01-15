@@ -28,7 +28,7 @@
                 <li><a href="index.php?action=inscription">Inscription</a></li>
                 <?php 
                 if($_SESSION['type']=='ADM'){
-                    echo '<li><a href="index.php?action=inscription">Créer un quiz</a></li>';
+                    echo '<li><a href="index.php?action=creaQuiz">Créer un quiz</a></li>';
                 }?>
             </ul>
             </div>

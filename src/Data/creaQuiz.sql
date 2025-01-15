@@ -54,7 +54,7 @@ INSERT INTO QUESTION (id_Q, id_Quiz, type_Q, label, choices, correct) VALUES
 (3, 2, 'Multiple Choice', 'What is the chemical symbol for water?', 'H2O,CO2,O2,N2', 'H2O');
 
 INSERT INTO UTILISATEUR (uuid, nom_U, mdp, type_U) VALUES
-(1, 'a', 'az', 'ADM'),
+(1, 'adm', '$2y$10$7YSBWl8PeZkFBEmgaMhiQe.mdtAQcm2cJvmYpvoaZ0Dne4frTf2Ge', 'ADM'),
 (2, 'b', 'bz', 'USER'),
 (3, 'c', 'cz', 'USER');
 
