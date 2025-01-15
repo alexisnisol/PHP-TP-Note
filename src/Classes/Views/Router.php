@@ -57,12 +57,13 @@ class Router
                 break;
             case 'quizAdmin':
                 Auth::checkIsAdmin();
-                self::render('quiz/quizAdmin.php', 'Quiz Admin', ['table_quiz.css']);
+                self::render('admin/quizAdmin.php', 'Quiz Admin', ['table_quiz.css']);
                 break;
             case 'connexion':
                 self::render('auth/connexion.php', 'Connexion', ['form.css']);
                 break;
             case 'creaQuiz':
+                Auth::checkIsAdmin();
                 self::render('admin/creaQuiz.php', 'creaQuiz', ['form.css']);
                 break;
             case 'createQuestion':

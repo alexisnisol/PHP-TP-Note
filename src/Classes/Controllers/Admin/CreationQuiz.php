@@ -8,7 +8,7 @@ class CreationQuiz
 {
 
     static function creationQuiz($nom, $theme) {
-        $id = getId();
+        $id = self::getId();
         $bdd = App::getApp()->getBD();
         $query = $bdd->prepare('INSERT INTO QUIZ (id_Quiz,name_Q,theme) VALUES (:id, :nom, :theme)');
         $query->execute(array(':nom' => $nom, ':theme' => $theme, ':id' => $id()));
@@ -20,6 +20,7 @@ class CreationQuiz
         $query = $bdd->prepare('SELECT max(id_Quiz) FROM QUIZ');
         $query->execute();
         $id = $query->fetch();
+        $id = $id['max(id_Quiz)'];
         return $id+1;
     }
 }
