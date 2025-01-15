@@ -7,16 +7,24 @@ use App;
 class Auth
 {
 
-    static function isUserLoggedIn() {
+    static function isUserLoggedIn(): bool
+    {
         return isset($_SESSION['nom']);
+    }
+
+    static function getCurrentId() {
+        if (self::isUserLoggedIn()) {
+            return $_SESSION['uuid'];
+        }
+        return null;
     }
 
     static function getCurrentUser() {
         if (self::isUserLoggedIn()) {
             return [
-                'id' => $_SESSION['uuId'],
+                'id' => $_SESSION['uuid'],
                 'nom' => $_SESSION['nom'],
-                'score' => $_SESSION['score']
+                'type' => $_SESSION['type']
             ];
         }
         return null;
@@ -34,7 +42,7 @@ class Auth
         $query->execute(array(':nom' => $nom));
         $user = $query->fetch();
         if($user){
-                $utilisateur = ['nom' => $user['nom_U'],'mdp' => $user['mdp'],'type' => $user['type_U']];
+                $utilisateur = ['uuid' => $user['uuid'], 'nom' => $user['nom_U'], 'mdp' => $user['mdp'],'type' => $user['type_U']];
             } else {
             $utilisateur = null;
         }

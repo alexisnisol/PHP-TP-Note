@@ -2,9 +2,10 @@
 
 namespace Classes\Views;
 
-use Classes\Views\Template;
+use Classes\Controllers\Auth\Auth;
 
-class Router {
+class Router
+{
 
     private static $template;
 
@@ -13,7 +14,7 @@ class Router {
     {
         self::$template = new Template(ROOT . '/templates');
     }
-    
+
     public static function render(string $view, string $title, array $cssFiles = [])
     {
         self::renderWithTemplate($view, 'main', $title, $cssFiles);
@@ -34,7 +35,8 @@ class Router {
         echo self::$template->compile();
     }
 
-    public function execute() {
+    public function execute()
+    {
         if (isset($_GET['action']) && $_GET['action'] !== '') {
             $action = $_GET['action'];
         } else {
@@ -46,16 +48,25 @@ class Router {
                 self::render('quiz/listeQuiz.php', 'Liste des quiz', ['table_quiz.css']);
                 break;
             case 'quiz':
+                Auth::checkUserLoggedIn();
                 self::render('quiz/quiz.php', 'Quiz', ['quiz.css']);
                 break;
+            case "resultat_quiz":
+                Auth::checkUserLoggedIn();
+                self::render('quiz/resultat_quiz.php', 'Résultat du quiz', ['quiz.css']);
+                break;
             case 'connexion':
-                self::render('auth/connexion.php', 'connexion', ['connexion.css']);
+                self::render('auth/connexion.php', 'Connexion', ['form.css']);
                 break;
             case 'creaQuiz':
                 self::render('auth/creaQuiz.php', 'creaQuiz', ['Create_Spec.css']);
                 break;
             case 'inscription':
-                self::render('auth/inscription.php', 'inscription', ['connexion.css']);
+                self::render('auth/inscription.php', 'Inscription', ['form.css']);
+                break;
+            case 'logout':
+                session_destroy();
+                header('Location: /index.php');
                 break;
             default:
                 self::render('404.php', 'Page introuvable', ['404.css']);
