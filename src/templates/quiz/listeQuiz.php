@@ -1,6 +1,7 @@
 <?php
 
 use Classes\Controllers\Quiz\ListeQuiz;
+use Classes\Controllers\Quiz\QuizManager;
 use Classes\Controllers\Auth\Auth;
 
 
@@ -28,11 +29,12 @@ $liste_quiz = ListeQuiz::getAllPlayerQuiz(Auth::getCurrentId());
                         <td><?php echo $donnees['score'] ? $donnees['score'] . '/20': 'Non participé'; ?></td>
                         <?php
                         if (Auth::isUserLoggedIn()) {
-                            if ($donnees['score'] == null) {
-                                echo '<td><a href="index.php?action=quiz&id=' . $donnees['id_Quiz'] . '">Participer</a></td>';
-                            } else {
-                                echo '<td><a href="index.php?action=quiz&id=' . $donnees['id_Quiz'] . '">Refaire</a></td>';
+                            $texte = $donnees['score'] == null ? 'Participer' : 'Refaire';
+
+                            if (QuizManager::isPlaying() && QuizManager::getCurrentIdQuiz() == $donnees['id_Quiz']) {
+                                $texte = '<strong>Continuer</strong>';
                             }
+                            echo '<td><a href="index.php?action=quiz&id=' . $donnees['id_Quiz'] . '">' . $texte . '</a></td>';
                         } else {
                             echo '<td><a href="index.php?action=connexion">Se connecter</a></td>';
                         }

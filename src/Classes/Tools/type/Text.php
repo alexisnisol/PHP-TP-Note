@@ -1,11 +1,9 @@
 <?php
 
-namespace Tools\type;
-
-use Tools\type\Input;
+namespace Classes\Tools\type;
 
 final class Text extends Input {
-    protected string $type = 'text'; 
+    protected string $type = 'text';
 }
 
 ?>

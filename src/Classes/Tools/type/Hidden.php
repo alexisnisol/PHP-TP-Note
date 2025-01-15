@@ -1,8 +1,6 @@
 <?php
 
-namespace Tools\type;
-
-use Tools\type\Input;
+namespace Classes\Tools\type;
 
 final class Hidden extends Input {
     protected string $type = 'hidden'; 
