@@ -5,7 +5,29 @@ use Classes\Controllers\Quiz\QuizManager;
 use Classes\Controllers\Auth\Auth;
 
 $liste_quiz = ListeQuiz::getAllPlayerQuizWithTotalQuestions(Auth::getCurrentId());
+$isPlaying = QuizManager::isPlaying();
+$currentIdQuiz = QuizManager::getCurrentIdQuiz();
 ?>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const buttons = document.querySelectorAll(".change-quiz");
+
+        buttons.forEach(button => {
+            button.addEventListener("click", event => {
+                const id = button.getAttribute("data-id");
+
+                const isPlaying = <?php echo json_encode($isPlaying); ?>;
+                const currentIdQuiz = <?php echo json_encode($currentIdQuiz); ?>;
+                if (isPlaying && currentIdQuiz !== id) {
+                    if (!confirm("Un quiz est déjà en cours.\nSi vous continuez, vous perdrez votre progression. Voulez-vous continuer ?")) {
+                        event.preventDefault();
+                    }
+                }
+            });
+        });
+    });
+</script>
 
 <main>
     <div class="main-liste-spec">
@@ -37,7 +59,7 @@ $liste_quiz = ListeQuiz::getAllPlayerQuizWithTotalQuestions(Auth::getCurrentId()
                             if (QuizManager::isPlaying() && QuizManager::getCurrentIdQuiz() == $donnees['id_Quiz']) {
                                 $texte = '<strong>Continuer</strong>';
                             }
-                            echo '<td><a href="index.php?action=quiz&id=' . $donnees['id_Quiz'] . '">' . $texte . '</a></td>';
+                            echo '<td><a data-id="' . $donnees['id_Quiz'] . '" class="change-quiz" href="index.php?action=quiz&id=' . $donnees['id_Quiz'] . '">' . $texte . '</a></td>';
                         } else {
                             echo '<td><a href="index.php?action=connexion">Se connecter</a></td>';
                         }
