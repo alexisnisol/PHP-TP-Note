@@ -7,6 +7,16 @@ use App;
 class Quiz
 {
 
+    static function getAllQuiz() {
+        $query = App::getApp()->getBD()->prepare("
+        SELECT
+            *
+        FROM QUIZ
+        ");
+        $query->execute();
+        return $query->fetchAll();
+    }
+
     static function getQuiz($id)
     {
         $query = App::getApp()->getBD()->prepare("
@@ -33,24 +43,12 @@ class Quiz
 
     static function saveParticipation($idQuiz, $idPlayer, $score)
     {
-
-        $participation = self::getParticipation($idQuiz, $idPlayer);
-        if ($participation) {
-            $query = App::getApp()->getBD()->prepare("
-                UPDATE PARTICIPE
-                SET score = :score, date = CURRENT_TIMESTAMP
-                WHERE id_Quiz = :idQuiz AND uuid = :idPlayer
-            ");
-            $query->execute([':idQuiz' => $idQuiz, ':idPlayer' => $idPlayer, ':score' => $score]);
-            return $query->fetch();
-        } else {
-            $query = App::getApp()->getBD()->prepare("
+        $query = App::getApp()->getBD()->prepare("
                 INSERT INTO PARTICIPE (id_Quiz, uuid, score)
                 VALUES (:idQuiz, :idPlayer, :score)
             ");
-            $query->execute([':idQuiz' => $idQuiz, ':idPlayer' => $idPlayer, ':score' => $score]);
-            return $query->fetch();
-        }
+        $query->execute([':idQuiz' => $idQuiz, ':idPlayer' => $idPlayer, ':score' => $score]);
+        return $query->fetch();
     }
 
     static function deleteQuiz($idQuiz)

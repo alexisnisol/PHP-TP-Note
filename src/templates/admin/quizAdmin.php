@@ -15,7 +15,7 @@ if (isset($_GET['id'])) {
 }
 
 // Récupération des quiz
-$liste_quiz = ListeQuiz::getAllPlayerQuiz(Auth::getCurrentId());
+$liste_quiz = Quiz::getAllQuiz();
 ?>
 
 <main>
