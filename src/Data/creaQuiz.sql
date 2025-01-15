@@ -17,7 +17,7 @@ CREATE TABLE QUESTION
     id_Quiz INT NOT NULL,
     type_Q  VARCHAR(42),
     label   VARCHAR(42),
-    choices VARCHAR(42),
+    choices VARCHAR(250),
     correct VARCHAR(42),
     PRIMARY KEY (id_Q, id_Quiz),
     FOREIGN KEY (id_Quiz) REFERENCES QUIZ (id_Quiz)
@@ -37,7 +37,7 @@ CREATE TABLE PARTICIPE
     id_Quiz INT NOT NULL,
     uuid    VARCHAR NOT NULL,
     score   FLOAT,
-    date    DATE DEFAULT (CURRENT_DATE),
+    date    DATE DEFAULT (current_timestamp),
     PRIMARY KEY (id_Quiz, uuid, date),
     FOREIGN KEY (id_Quiz) REFERENCES QUIZ (id_Quiz),
     FOREIGN KEY (uuid) REFERENCES UTILISATEUR (uuid)
@@ -48,9 +48,10 @@ insert into QUIZ values (1, 'Quiz1', 'Math');
 insert into QUIZ values (2, 'Quiz2', 'Math');
 insert into QUIZ values (3, 'Quiz3', 'Math');
 
-insert into QUESTION values (1, 1, 'text', 'Question1', 'A;B;C;D', 'A');
-insert into QUESTION values (2, 1, 'text', 'Question2', 'A;B;C;D', 'B');
-insert into QUESTION values (3, 1, 'text', 'Question3', 'A;B;C;D', 'C');
-insert into QUESTION values (1, 2, 'text', 'Question1', 'A;B;C;D', 'A');
-insert into QUESTION values (2, 2, 'text', 'Question2', 'A;B;C;D', 'B');
-insert into QUESTION values (3, 2, 'text', 'Question3', 'A;B;C;D', 'C');
+insert into QUESTION values (1,1, 'checkbox', 'Question1', 'A;B;C;D', 'A;B');
+insert into QUESTION values (2, 1, 'text', 'Question2', null, 'B');
+insert into QUESTION values (3, 1, 'number', 'Question3', null, '2');
+
+insert into QUESTION values (1, 2, 'text', 'Question1', null, 'A');
+insert into QUESTION values (2, 2, 'text', 'Question2', null, 'B');
+insert into QUESTION values (3, 2, 'text', 'Question3', null, 'C');
