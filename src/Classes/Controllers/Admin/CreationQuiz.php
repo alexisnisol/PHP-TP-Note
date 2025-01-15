@@ -7,19 +7,21 @@ use App;
 class CreationQuiz
 {
 
-    static function creationQuiz($nom, $theme) {
-        $id = getId();
+    static function createQuiz($nom, $theme): void
+    {
+        $id = self::getNextId();
         $bdd = App::getApp()->getBD();
         $query = $bdd->prepare('INSERT INTO QUIZ (id_Quiz,name_Q,theme) VALUES (:id, :nom, :theme)');
-        $query->execute(array(':nom' => $nom, ':theme' => $theme, ':id' => $id()));
-        header('Location: index.php?idQ='.$id.'action=createQuestion');
+        $query->execute(array(':nom' => $nom, ':theme' => $theme, ':id' => $id));
+        header('Location: index.php?idQ='.$id.'&action=createQuestion');
     }
 
-    static function getId() {
+    private static function getNextId() {
         $bdd = App::getApp()->getBD();
-        $query = $bdd->prepare('SELECT max(id_Quiz) FROM QUIZ');
+        $query = $bdd->prepare('SELECT IFNULL(max(id_Quiz), 0) as maxi FROM QUIZ');
         $query->execute();
-        $id = $query->fetch();
+        $res = $query->fetch();
+        $id = $res['maxi'];
         return $id+1;
     }
 }

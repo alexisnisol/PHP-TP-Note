@@ -57,16 +57,18 @@ class Router
                 break;
             case 'quizAdmin':
                 Auth::checkIsAdmin();
-                self::render('quiz/quizAdmin.php', 'Quiz Admin', ['table_quiz.css']);
+                self::render('admin/quizAdmin.php', 'Quiz Admin', ['table_quiz.css']);
                 break;
             case 'connexion':
                 self::render('auth/connexion.php', 'Connexion', ['form.css']);
                 break;
-            case 'creaQuiz':
-                self::render('admin/creaQuiz.php', 'creaQuiz', ['form.css']);
+            case 'createQuiz':
+                Auth::checkIsAdmin();
+                self::render('admin/createQuiz.php', 'Création de quiz', ['form.css', 'create_quiz.css']);
                 break;
             case 'createQuestion':
-                self::render('auth/createQuestion.php', 'Création de question', ['Create_Spec.css']);
+                Auth::checkIsAdmin();
+                self::render('admin/createQuestion.php', 'Création de question', ['form.css', 'create_quiz.css']);
                 break;
             case 'inscription':
                 self::render('auth/inscription.php', 'Inscription', ['form.css']);

@@ -8,7 +8,7 @@ use Classes\Controllers\Auth\Auth;
 if (isset($_GET['id'])) {
     $idQuiz = intval($_GET['id']);
     Quiz::deleteQuiz($idQuiz);
-    
+
     // Redirection après suppression
     header("Location: index.php?action=quizAdmin&message=Quiz supprimé avec succès");
     exit();
@@ -27,7 +27,7 @@ $liste_quiz = ListeQuiz::getAllPlayerQuiz(Auth::getCurrentId());
                     <th scope="col">Nom</th>
                     <th scope="col">Thème</th>
                     <th scope="col">
-                        <a class="add-btn" href="#">Ajouter</a>
+                        <a class="add-btn" href="index.php?action=createQuiz">Ajouter</a>
                     </th>
                 </tr>
             </thead>
@@ -36,8 +36,8 @@ $liste_quiz = ListeQuiz::getAllPlayerQuiz(Auth::getCurrentId());
             foreach ($liste_quiz as $donnees) {
                 ?>
                 <tr>
-                    <td><?php echo htmlspecialchars($donnees['name_Q']); ?></td>
-                    <td><?php echo htmlspecialchars($donnees['theme']); ?></td>
+                    <td><?php echo $donnees['name_Q']; ?></td>
+                    <td><?php echo $donnees['theme']; ?></td>
                     <td>
                         <div class="btn-container">
                             <a href="#" class="edit-btn">Modifier</a>

@@ -19,7 +19,7 @@ $liste_quiz = ListeQuiz::getAllPlayerQuizWithTotalQuestions(Auth::getCurrentId()
                 <tr>
                     <th scope="col">Nom</th>
                     <th scope="col">Theme</th>
-                    <th scope="col">Note</th>
+                    <th scope="col">Dernière Note</th>
                 </tr>
             </thead>
             <tbody>

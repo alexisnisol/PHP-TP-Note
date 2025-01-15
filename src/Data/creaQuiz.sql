@@ -49,7 +49,7 @@ INSERT INTO UTILISATEUR (uuid, nom_U, mdp, type_U) VALUES
 
 
 insert into QUIZ values (1, 'Quiz1', 'Math');
-insert into QUIZ values (2, 'Qiuz2', 'Math');
+insert into QUIZ values (2, 'Quiz2', 'Math');
 insert into QUIZ values (3, 'Quiz3', 'Math');
 
 insert into QUESTION values (1, 1, 'checkbox', 'Question1', 'A;B;C;D', 'A;B');
