@@ -27,7 +27,7 @@ $liste_quiz = ListeQuiz::getAllPlayerQuiz(Auth::getCurrentId());
                     <th scope="col">Nom</th>
                     <th scope="col">Thème</th>
                     <th scope="col">
-                        <a class="add-btn" href="#">Ajouter</a>
+                        <a class="add-btn" href="index.php?action=createQuiz">Ajouter</a>
                     </th>
                 </tr>
             </thead>
