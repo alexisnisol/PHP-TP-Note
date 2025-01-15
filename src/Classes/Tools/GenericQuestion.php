@@ -2,11 +2,12 @@
 
 namespace Classes\Tools;
 
+use Classes\Tools\type\TypeEnum;
 
 abstract class GenericQuestion implements InputRenderInterface
 {
 
-    protected string $type;
+    protected TypeEnum $type;
 
     protected string $label = '';
 

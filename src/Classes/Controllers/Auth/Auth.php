@@ -12,6 +12,11 @@ class Auth
         return isset($_SESSION['nom']);
     }
 
+    static function isUserAdmin(): bool
+    {
+        return self::getCurrentUser()['type'] === 'ADM';
+    }
+
     static function getCurrentId() {
         if (self::isUserLoggedIn()) {
             return $_SESSION['uuid'];
@@ -36,6 +41,12 @@ class Auth
         }
     }
 
+    static function checkIsAdmin() {
+        if(!self::isUserAdmin()){
+            header('Location: /index.php');
+        }
+    }
+
 
     static function getUserByName($nom) {
         $query = App::getApp()->getBD()->prepare('SELECT * FROM UTILISATEUR WHERE nom_U = :nom');
@@ -50,8 +61,5 @@ class Auth
         return $utilisateur;
     }
 
-    static function checkIsAdmin() {
-        return self::getCurrentUser()['type'] === 'ADM';
-    }
 }
 ?>

@@ -13,7 +13,7 @@ abstract class InputSelection extends GenericQuestion
             $html .= "<div class='question'>";
             $html .= sprintf(
                 '<input type="%s" %s value="%s" name="answer[]" id="%s"/>',
-                $this->type, $this->isLocked() ? 'disabled' : '', $choice, $choice
+                $this->type->name, $this->isLocked() ? 'disabled' : '', $choice, $choice
             );
             $html .= sprintf(
                 '<label for="%s">%s</label>',
