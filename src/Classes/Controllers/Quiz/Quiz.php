@@ -62,6 +62,12 @@ class Quiz
         $query->execute([':idQuiz' => $idQuiz]);
 
         $query = App::getApp()->getBD()->prepare("
+            DELETE FROM QUESTION
+            WHERE id_Quiz = :idQuiz
+        ");
+        $query->execute([':idQuiz' => $idQuiz]);
+
+        $query = App::getApp()->getBD()->prepare("
             DELETE FROM QUIZ
             WHERE id_Quiz = :idQuiz
         ");
