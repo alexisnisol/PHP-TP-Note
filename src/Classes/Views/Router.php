@@ -55,12 +55,13 @@ class Router
                 Auth::checkUserLoggedIn();
                 self::render('quiz/resultat_quiz.php', 'Résultat du quiz', ['quiz.css']);
                 break;
+            case 'historique':
+                Auth::checkUserLoggedIn();
+                self::render('quiz/historique.php', 'Historique', ['table_quiz.css']);
+                break;
             case 'quizAdmin':
                 Auth::checkIsAdmin();
                 self::render('admin/quizAdmin.php', 'Quiz Admin', ['table_quiz.css']);
-                break;
-            case 'connexion':
-                self::render('auth/connexion.php', 'Connexion', ['form.css']);
                 break;
             case 'createQuiz':
                 Auth::checkIsAdmin();
@@ -69,6 +70,9 @@ class Router
             case 'createQuestion':
                 Auth::checkIsAdmin();
                 self::render('admin/createQuestion.php', 'Création de question', ['form.css', 'create_quiz.css']);
+                break;
+            case 'connexion':
+                self::render('auth/connexion.php', 'Connexion', ['form.css']);
                 break;
             case 'inscription':
                 self::render('auth/inscription.php', 'Inscription', ['form.css']);
