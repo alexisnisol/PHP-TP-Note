@@ -19,14 +19,7 @@ class AuthForm
                 $_SESSION['uuid'] = $user['uuid'];
                 $_SESSION['nom'] = $user['nom'];
                 $_SESSION['type'] = $user['type'];
-
-                if ($user['type'] == 'ADM') {
-                    header('Location: index.php?action=admin');
-                } elseif ($user['type'] == 'USER') {
-                    header('Location: index.php');
-                } else {
-                    header('Location: /');
-                }
+                header('Location: index.php');
             } else {
                 $error = 'Mot de passe incorrect';
             }

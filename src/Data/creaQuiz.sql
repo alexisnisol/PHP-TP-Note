@@ -44,11 +44,15 @@ CREATE TABLE PARTICIPE
 );
 
 
+INSERT INTO UTILISATEUR (uuid, nom_U, mdp, type_U) VALUES
+(1, 'adm', '$2y$10$7YSBWl8PeZkFBEmgaMhiQe.mdtAQcm2cJvmYpvoaZ0Dne4frTf2Ge', 'ADM');
+
+
 insert into QUIZ values (1, 'Quiz1', 'Math');
-insert into QUIZ values (2, 'Quiz2', 'Math');
+insert into QUIZ values (2, 'Qiuz2', 'Math');
 insert into QUIZ values (3, 'Quiz3', 'Math');
 
-insert into QUESTION values (1,1, 'checkbox', 'Question1', 'A;B;C;D', 'A;B');
+insert into QUESTION values (1, 1, 'checkbox', 'Question1', 'A;B;C;D', 'A;B');
 insert into QUESTION values (2, 1, 'text', 'Question2', null, 'B');
 insert into QUESTION values (3, 1, 'text', 'Question3', null, 'C');
 
@@ -56,5 +60,3 @@ insert into QUESTION values (1, 2, 'text', 'Question1', null, 'A');
 insert into QUESTION values (2, 2, 'text', 'Question2', null, 'B');
 insert into QUESTION values (3, 2, 'text', 'Question3', null, 'C');
 
-INSERT INTO UTILISATEUR (uuid, nom_U, mdp, type_U) VALUES
-(1, 'adm', '$2y$10$7YSBWl8PeZkFBEmgaMhiQe.mdtAQcm2cJvmYpvoaZ0Dne4frTf2Ge', 'ADM');
