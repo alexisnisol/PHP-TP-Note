@@ -16,7 +16,7 @@ $liste_quiz = ListeQuiz::getAllParticipations(Auth::getCurrentId());
                 <th scope="col">Nom</th>
                 <th scope="col">Theme</th>
                 <th scope="col">Note</th>
-                <th scope="col">Date</th>
+                <th scope="col">Date ▲</th>
             </tr>
             </thead>
             <tbody>
