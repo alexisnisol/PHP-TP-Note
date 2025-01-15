@@ -17,6 +17,10 @@ abstract class InputSelection extends GenericQuestion
     public function render(): string
     {
         $html = '<div class="question-container">';
+        $html .= sprintf(
+            '<label for="%s">%s</label>',
+            $this->getId(), $this->label
+        );
         foreach ($this->choices as $key => $choice) {
             $html .= "<div class='question'>";
             $html .= sprintf(
