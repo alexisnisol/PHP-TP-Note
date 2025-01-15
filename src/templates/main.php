@@ -22,7 +22,7 @@
 <header>
     <div class="logo">
         <img src="./static/img/logo.png" alt="Logo">
-        <h1>PHP</h1>
+        <h1>PHP Quiz</h1>
     </div>
     <nav class="nav-menu">
         <div class="list_nav">
@@ -38,7 +38,7 @@
     <div class="actions">
         <?php
         if (Auth::isUserLoggedIn()) {
-            echo '<p>Bonjour, ' . Auth::getCurrentUser()['name'] . '</p>';
+            echo '<p>Bonjour, ' . Auth::getCurrentUser()['nom'] . '</p>';
 
             echo '<a href="index.php?action=logout">Déconnexion</a>';
         } else {
