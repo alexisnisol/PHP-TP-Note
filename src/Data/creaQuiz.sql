@@ -55,3 +55,6 @@ insert into QUESTION values (3, 1, 'text', 'Question3', null, 'C');
 insert into QUESTION values (1, 2, 'text', 'Question1', null, 'A');
 insert into QUESTION values (2, 2, 'text', 'Question2', null, 'B');
 insert into QUESTION values (3, 2, 'text', 'Question3', null, 'C');
+
+INSERT INTO UTILISATEUR (uuid, nom_U, mdp, type_U) VALUES
+(1, 'adm', '$2y$10$7YSBWl8PeZkFBEmgaMhiQe.mdtAQcm2cJvmYpvoaZ0Dne4frTf2Ge', 'ADM');
