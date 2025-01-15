@@ -22,6 +22,7 @@
   width: 80%; /* Ajuster la largeur du tableau */
   max-width: 1200px; /* Limiter la largeur maximale */
   margin: 0 auto; /* Centrer horizontalement */
+  margin-top: 1.5rem;
 }
 
 #table-spec th,
@@ -67,7 +68,7 @@
   background-color: #9c6808;
   color: white;
   text-decoration: none;
-  padding: 5px 10px;
+  padding: 7px 15px;
   font-size: 12px;
   font-weight: bold;
   border-radius: 5px;
@@ -75,12 +76,12 @@
 }
 
 .edit-btn:hover {
-  background-color: #796305;
+  background-color: #74631c;
   transform: scale(1.05);
 }
 
 .edit-btn:active {
-  background-color: #796305;
+  background-color: #74631c;
   transform: scale(0.95);
 }
 
@@ -89,7 +90,7 @@
   background-color: #8b2311;
   color: white;
   text-decoration: none;
-  padding: 5px 10px;
+  padding: 7px 15px;
   font-size: 12px;
   font-weight: bold;
   border-radius: 5px;
@@ -105,3 +106,23 @@
   background-color: #700a05;
   transform: scale(0.95);
 }
+
+.conteneur {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.paragraphe, .droits{
+  width: 100%;
+}
+
+.paragraphe{
+  margin-bottom: 0.7rem;
+}
+
+.droits{
+  margin-bottom: 0.3rem;
+}
+
+

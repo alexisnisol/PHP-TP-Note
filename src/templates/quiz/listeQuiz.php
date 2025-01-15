@@ -3,14 +3,17 @@
 use Classes\Controllers\Quiz\ListeQuiz;
 use Classes\Controllers\Quiz\QuizManager;
 use Classes\Controllers\Auth\Auth;
-use Classes\Tools\type\TypeEnum;
 
-$liste_quiz = ListeQuiz::getAllPlayerQuiz(Auth::getCurrentId());
+$liste_quiz = ListeQuiz::getAllPlayerQuizWithTotalQuestions(Auth::getCurrentId());
 ?>
 
 <main>
     <div class="main-liste-spec">
         <h1 id="les-specs-orga">Voici la liste des Quiz disponibles</h1>
+        <div class="conteneur">
+            <h3 class="paragraphe">Sur cette page, vous pouvez vous exercer en réalisant les Quiz ci-dessous</h3>
+            <p class="droits">Vous pouvez voir toutes les caractéristiques des Quiz, notamment leur nom, thème et vos notes.</p>
+        </div>
         <table id="table-spec">
             <thead>
                 <tr>
@@ -26,10 +29,10 @@ $liste_quiz = ListeQuiz::getAllPlayerQuiz(Auth::getCurrentId());
                     <tr>
                         <td><?php echo $donnees['name_Q']; ?></td>
                         <td><?php echo $donnees['theme']; ?></td>
-                        <td><?php echo $donnees['score'] ? $donnees['score'] . '/20': 'Non participé'; ?></td>
+                        <td><?php echo isset($donnees['score']) ? $donnees['score'] . '/'. $donnees['totalQ'] : 'Non participé'; ?></td>
                         <?php
                         if (Auth::isUserLoggedIn()) {
-                            $texte = $donnees['score'] == null ? 'Participer' : 'Refaire';
+                            $texte = is_null($donnees['score']) ? 'Participer' : 'Refaire';
 
                             if (QuizManager::isPlaying() && QuizManager::getCurrentIdQuiz() == $donnees['id_Quiz']) {
                                 $texte = '<strong>Continuer</strong>';
