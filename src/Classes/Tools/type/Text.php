@@ -3,7 +3,7 @@
 namespace Classes\Tools\type;
 
 final class Text extends Input {
-    protected string $type = TypeEnum::text;
+    protected TypeEnum $type = TypeEnum::text;
 }
 
 ?>

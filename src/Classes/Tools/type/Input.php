@@ -15,7 +15,7 @@ abstract class Input extends GenericQuestion
         );
         $html .= sprintf(
             '<input type="%s" %s value="%s" name="answer" id="%s"/>',
-            $this->type, $this->isLocked() ? 'disabled' : '', $this->getValue(), $this->getId()
+            $this->type->name, $this->isLocked() ? 'disabled' : '', $this->getValue(), $this->getId()
         );
         $html .= '</div>';
         return $html;
