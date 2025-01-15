@@ -7,16 +7,12 @@ use App;
 class CreationQuiz
 {
 
-    static function creationQuiz($nom, $theme, $questions) {
+    static function creationQuiz($nom, $theme) {
         $id = getId();
         $bdd = App::getApp()->getBD();
         $query = $bdd->prepare('INSERT INTO QUIZ (id_Quiz,name_Q,theme) VALUES (:id, :nom, :theme)');
         $query->execute(array(':nom' => $nom, ':theme' => $theme, ':id' => $id()));
-        foreach ($questions as $question) {
-            CreationQuestion::creationQuestion($id, $question['type'], $question['label'], $question['choices'], $question['correct']);
-        }
-        
-        
+        header('Location: index.php?action=createQuestion');
     }
 
     static function getId() {

@@ -61,6 +61,9 @@ class Router
             case 'creaQuiz':
                 self::render('admin/creaQuiz.php', 'creaQuiz', ['form.css']);
                 break;
+            case 'createQuestion':
+                self::render('auth/createQuestion.php', 'Création de question', ['Create_Spec.css']);
+                break;
             case 'inscription':
                 self::render('auth/inscription.php', 'Inscription', ['form.css']);
                 break;
