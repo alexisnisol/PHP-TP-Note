@@ -11,6 +11,10 @@ $liste_quiz = ListeQuiz::getAllPlayerQuiz(Auth::getCurrentId());
 <main>
     <div class="main-liste-spec">
         <h1 id="les-specs-orga">Voici la liste des Quiz disponibles</h1>
+        <div class="conteneur">
+            <h3 class="paragraphe">Sur cette page, vous pouvez vous exercer en réalisant les Quiz ci-dessous</h3>
+            <p class="droits">Vous pouvez voir toutes les caractéristiques des Quiz, notamment leur nom, thème et vos notes.</p>
+        </div>
         <table id="table-spec">
             <thead>
                 <tr>

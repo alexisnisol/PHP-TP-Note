@@ -11,6 +11,12 @@ $liste_quiz = ListeQuiz::getAllPlayerQuiz(Auth::getCurrentId());
 <main>
     <div class="main-liste-spec">
         <h1 id="les-specs-orga">Gérer les Quiz</h1>
+        <div class="conteneur">
+            <h3 class="paragraphe">En tant qu'administrateur, vous pouvez :</h3>
+            <p class="droits">- Ajouter un Quiz ainsi que leurs questions.</p>
+            <p class="droits">- Modifier un Quiz en changeant les questions et les réponses.</p>
+            <p class="droits">- Supprimer un Quiz de la liste.</p>
+        </div>
         <table id="table-spec">
             <thead>
                 <tr>
