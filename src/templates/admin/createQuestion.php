@@ -34,30 +34,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div id="dynamic-fields">
                     <!-- Les champs dynamiques seront ajoutés ici -->
                 </div>
-            <label for="answer">Bonne réponse</label>
-            <input type="text" id="answer" name="answer" required>
-                <div id="boutons">
-                    <input type="submit" class="bouton-bas" formaction="" value="Créé le quiz">
-                    <input type="submit" class="bouton-bas" formaction="index.php?action=createQuestion&idQ=' . $idQ" value="Rajouter une question">
+                <div class="boutons">
+                    <input type="submit" class="button" value="Ajouter la question">
+                    <button href="index.php?action=quizAdmin" onclick="window.location.href='index.php?action=quizAdmin'">Créé le quiz</button>
                 </div>
-
             </form>
         </section>
     </div>
 </div>
 
-    <script>
+<script>
     document.addEventListener('DOMContentLoaded', () => {
         const selectType = document.getElementById('type');
         const dynamicFields = document.getElementById('dynamic-fields');
 
         const fieldsByType = {<?php
-                        foreach (TypeEnum::getTypes() as $type) {
-                            echo $type->name . ": `";
-                            include 'templates/admin/form/' . $type->name . '.php';
-                            echo "`,";
-                        }
-                        ?>
+            foreach (TypeEnum::getTypes() as $type) {
+                echo $type->name . ": `";
+                echo $type->value;
+                echo "`,";
+            }
+            ?>
         };
         selectType.addEventListener('change', () => {
             const selectedType = selectType.value;
