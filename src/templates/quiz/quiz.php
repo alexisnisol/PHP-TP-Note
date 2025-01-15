@@ -18,6 +18,10 @@ QuizManager::checkQuizStarted($_GET['id']);
 
 $quiz = QuizManager::getQuiz();
 $question = QuizManager::getCurrentQuestion();
+if ($question === null) {
+    header('Location: index.php?action=resultat_quiz&id=' . $quiz['id_Quiz']);
+    exit();
+}
 ?>
 
 <div class="quiz-page">
