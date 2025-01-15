@@ -1,6 +1,7 @@
 <?php
 
 use Classes\Controllers\Admin\CreationQuestion;
+use Classes\Tools\type\TypeEnum;
 
 // Si la méthode est POST, traiter les données
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -18,18 +19,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <h1>Création d'un quiz</h1>
             <section class="form-section">
             <form method="POST" action="#">
-                <label for="nomQ">Type de question</label>
-                <input type="select" id="nomQ" name="nomQ">
-                <nom>Type de question</nom>
-                foreach
-                <option valeur="fr">Français</option>
-                <option valeur="nl">Néerlandais</option>
-                <option valeur="en">Anglais</option>
-                <option valeur="other">Autre</option>
-
-
+                <label for="type">Type de question</label>
+                <input type="select" id="type" name="type">
+                <?php foreach (TypeEnum::getTypes() as $type) { 
+                  echo  "<option value=" . $type . ">" . $type . "</option>";} ?>
                 <label for="theme">Theme de votre quiz</label>
                 <input type="text" id="theme" name="theme">
+                
 
                 <div id="boutons">
                     <button type="submit" class="bouton-bas" >Créé le quiz</button>
