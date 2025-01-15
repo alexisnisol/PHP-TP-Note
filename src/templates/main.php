@@ -31,10 +31,7 @@
 
                 <?php if (!Auth::isUserLoggedIn()) { 
                     echo "<li><a href='index.php?action=inscription'>Inscription</a></li>"; 
-                } 
-                if($_SESSION['type']=='ADM'){
-                    echo '<li><a href="index.php?action=creaQuiz">Créer un quiz</a></li>';
-                }?>
+                } ?>
             </ul>
         </div>
     </nav>

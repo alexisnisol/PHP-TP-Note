@@ -10,9 +10,6 @@
                 <label for="theme">Theme de votre quiz</label>
                 <input type="text" id="theme" name="theme">
 
-                <label for="nb">Nombre de Question</label>
-                <input type="number" id="nb" name="nb">
-
                 <div id="boutons">
                     <button type="reset" class="bouton-bas">Reinitailiser le formulaire</button>
                     <button type="submit" class="bouton-bas" >Créé le quiz</button>
