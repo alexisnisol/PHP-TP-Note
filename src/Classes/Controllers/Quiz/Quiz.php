@@ -52,4 +52,28 @@ class Quiz
             return $query->fetch();
         }
     }
+
+    static function deleteQuiz($idQuiz)
+    {
+        $query = App::getApp()->getBD()->prepare("
+            DELETE FROM PARTICIPE
+            WHERE id_Quiz = :idQuiz
+        ");
+        $query->execute([':idQuiz' => $idQuiz]);
+
+        $query = App::getApp()->getBD()->prepare("
+            DELETE FROM QUESTION
+            WHERE id_Quiz = :idQuiz
+        ");
+        $query->execute([':idQuiz' => $idQuiz]);
+
+        $query = App::getApp()->getBD()->prepare("
+            DELETE FROM QUIZ
+            WHERE id_Quiz = :idQuiz
+        ");
+        $query->execute([':idQuiz' => $idQuiz]);
+
+        return $query->rowCount() > 0; // Retourne true si la suppression a réussi
+    }
+
 }

@@ -6,6 +6,14 @@ use Classes\Tools\GenericQuestion;
 
 abstract class InputSelection extends GenericQuestion
 {
+
+    public const ADMIN_FORM = <<<HTML
+    <label for="options">Choix (séparés par des points-virgules)</label>
+    <input type="text" id="options" name="options" required>
+    <label for="answer">Réponse(s) (séparés par des points-virgules)</label>
+    <input type="text" id="answer" name="answer" required>
+    HTML;
+
     public function render(): string
     {
         $html = '<div class="question-container">';

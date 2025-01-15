@@ -7,6 +7,11 @@ use Classes\Tools\type\TypeEnum;
 abstract class GenericQuestion implements InputRenderInterface
 {
 
+    public const ADMIN_FORM = <<<HTML
+        <label for="answer">Réponse</label>
+        <input type="text" id="answer" name="answer" required>
+        HTML;
+
     protected TypeEnum $type;
 
     protected string $label = '';

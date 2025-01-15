@@ -15,25 +15,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-
-
-<main id="create-art">
-        <div>
-            <h1>Création d'une question</h1>
-            <section class="form-section">
+<div class="page">
+    <div class="form-container">
+        <h1>Création d'une question</h1>
+        <section class="form-section">
             <form method="POST" action=''>
-            <label for="type" class="label">Type de questions</label>
-            <select name="type" id="type">
-                <option value="">---Type de votre question---</option>
-                <?php 
-                foreach (TypeEnum::getTypes() as $type) {
-                    echo "<option value='" . $type->name . "'>" . $type->name . "</option>";
-                }
-                ?>
-            </select>
-            <label for="question">Question</label>
-            <input type="text" id="question" name="question" required>
-            <div id="dynamic-fields">
+                <label for="type" class="label">Type de questions</label>
+                <select name="type" id="type" required>
+                    <option value="">---Type de votre question---</option>
+                    <?php
+                    foreach (TypeEnum::getTypes() as $type) {
+                        echo "<option value='" . $type->name . "'>" . $type->name . "</option>";
+                    }
+                    ?>
+                </select>
+                <label for="question">Question</label>
+                <input type="text" id="question" name="question" required>
+                <div id="dynamic-fields">
                     <!-- Les champs dynamiques seront ajoutés ici -->
                 </div>
             <label for="answer">Bonne réponse</label>
@@ -42,23 +40,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input type="submit" class="bouton-bas" formaction="index.php?action=lastQuestion&idQ=<?php echo $idQ ?>" value="Créé le quiz">
                     <input type="submit" class="bouton-bas" formaction="index.php?action=createQuestion&idQ=<?php echo $idQ ?>" value="Rajouter une question">
                 </div>
-
             </form>
         </section>
-    </main>
+    </div>
+</div>
 
-    <script>
+<script>
     document.addEventListener('DOMContentLoaded', () => {
         const selectType = document.getElementById('type');
         const dynamicFields = document.getElementById('dynamic-fields');
 
         const fieldsByType = {<?php
-                        foreach (TypeEnum::getTypes() as $type) {
-                            echo $type->name . ": `";
-                            include 'templates/admin/form/' . $type->name . '.php';
-                            echo "`,";
-                        }
-                        ?>
+            foreach (TypeEnum::getTypes() as $type) {
+                echo $type->name . ": `";
+                echo $type->value;
+                echo "`,";
+            }
+            ?>
         };
         selectType.addEventListener('change', () => {
             const selectedType = selectType.value;
