@@ -1,1 +1,52 @@
 # PHP - TP Noté
+
+## Membre de l'équipe
+- Nicolas Lepage  
+- Alexis Nisol  
+- Alexy Wiciak  
+
+---
+
+## Introduction
+Ce projet a été réalisé en équipe de 3 dans le cadre d'un TP noté en PHP. Il met en œuvre plusieurs fonctionnalités que nous avons apprise en cours et appliquées lors de ce projet.
+
+---
+
+## Prérequis
+Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur votre machine :
+- PHP (version 7.4 ou supérieure)
+- Serveur web local (Apache, Nginx ou équivalent)
+- Base de données MySQL/MariaDB/SQLite
+
+---
+
+## Fonctionnalités
+
+### Utilisateurs
+
+En tant qu'utilisateur, vous devez créer un compte pour vous connecter afin de répondre aux différents quiz que vous pouvez réaliser sur la page d'accueil.
+
+Si vous quittez pendant un quiz, vous pourrez reprendre là où vous en étiez. Vous pouvez consulter les différents noms, thèmes et les notes que vous aurez obtenues.
+
+À la fin de chaque QCM, il sera possible de voir les éventuelles erreurs que vous aurez commises pour connaître vos bonnes et vos mauvaises réponses.
+
+---
+
+### Admin
+
+En tant qu'administrateur, vous pouvez aussi répondre aux différents quiz, mais vous avez en plus la possibilité de gérer ceux-ci en ajoutant un quiz avec le nombre de questions, le thèmes, le type, les diffents choix et la bonne réponse associée.
+
+Une fois le quiz créé, vous pourrez le modifier à tout moment. Chaque attribut est modifiable.
+
+Enfin, l'administrateur pourra supprimer les quiz qu'il souhaite. 
+
+---
+
+## Installation
+
+1. **Cloner le dépôt** :
+   ```bash
+   git clone https://github.com/alexisnisol/PHP-TP-Note.git
+   cd src
+   php -S localhost:8000
+   ```
