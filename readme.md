@@ -53,6 +53,7 @@ Enfin, l'administrateur pourra supprimer les quiz qu'il souhaite.
 - Classement
 - Chronomètre
 - Navigation non séquentielle (Retour en arrière possible)
+- Import / Export des quiz en json
 
 ---
 
