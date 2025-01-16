@@ -14,7 +14,7 @@ Ce projet a été réalisé en équipe de 3 dans le cadre d'un TP noté en PHP. 
 
 ## Prérequis
 Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur votre machine :
-- PHP (version 7.4 ou supérieure)
+- PHP (version 8.3 ou supérieure)
 - Serveur web local (Apache, Nginx ou équivalent)
 - Base de données MySQL/MariaDB/SQLite
 
@@ -34,7 +34,7 @@ Si vous quittez pendant un quiz, vous pourrez reprendre là où vous en étiez. 
 
 ### Admin
 
-En tant qu'administrateur, vous pouvez aussi répondre aux différents quiz, mais vous avez en plus la possibilité de gérer ceux-ci en ajoutant un quiz avec le nombre de questions, le thèmes, le type, les diffents choix et la bonne réponse associée.
+En tant qu'administrateur,vous pouvez vous connecter avec le nom : admin et le mot de passe : admin, vous pouvez aussi répondre aux différents quiz, mais vous avez en plus la possibilité de gérer ceux-ci en ajoutant un quiz avec le nombre de questions, le thèmes, le type, les diffents choix et la bonne réponse associée.
 
 Une fois le quiz créé, vous pourrez le modifier à tout moment. Chaque attribut est modifiable.
 
