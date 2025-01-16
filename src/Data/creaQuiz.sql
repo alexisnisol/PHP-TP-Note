@@ -51,7 +51,8 @@ INSERT INTO UTILISATEUR (uuid, nom_U, mdp, type_U) VALUES
 -- Insérer les quiz
 INSERT INTO QUIZ (id_Quiz, name_Q, theme) VALUES
                                               (1, 'Quiz Animaux', 'Animaux'),
-                                              (2, 'Quiz Villes', 'Villes');
+                                              (2, 'Quiz Villes', 'Villes'),
+                                              (3, "Les plaisirs d'Alexis", 'Alexis');
 
 -- Insérer les questions pour le Quiz Animaux
 INSERT INTO QUESTION (id_Q, id_Quiz, type_Q, label, choices, correct) VALUES
@@ -70,3 +71,6 @@ INSERT INTO QUESTION (id_Q, id_Quiz, type_Q, label, choices, correct) VALUES
 (5, 2, 'checkbox', 'Dans quelle ville peut-on voir la Statue de la Liberté ?', 'Paris;Londres;New York', 'New York');
 
 
+-- Insérer les questions pour le Quiz Villes
+INSERT INTO QUESTION (id_Q, id_Quiz, type_Q, label, choices, correct) VALUES
+(1, 3, 'checkbox', 'Quelle plaisirs Alexis enleverais parmie : ', 'Luxure;Sportve;Manger', 'Manger');
