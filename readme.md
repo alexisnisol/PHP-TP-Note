@@ -40,9 +40,19 @@ En tant qu'administrateur,vous pouvez vous connecter avec les identifiants :
 
 Vous pouvez aussi répondre aux différents quiz, mais vous avez en plus la possibilité de gérer ceux-ci en ajoutant un quiz avec le nombre de questions, le thèmes, le type, les diffents choix et la bonne réponse associée.
 
-Une fois le quiz créé, vous pourrez le modifier à tout moment. Chaque attribut est modifiable.
+Une fois le quiz créé, vous pourrez le modifier à tout moment. Chaque attribut est modifiable. De plus, le type de question est modulable et flexible, la structure permet de supporter de nouveaux types facilement.
 
 Enfin, l'administrateur pourra supprimer les quiz qu'il souhaite. 
+
+---
+
+## Fonctionnalités prévues
+
+- Modification d'un quiz
+- Extension de l'application pour gérer des sondages
+- Classement
+- Chronomètre
+- Navigation non séquentielle (Retour en arrière possible)
 
 ---
 
