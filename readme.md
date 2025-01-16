@@ -34,7 +34,11 @@ Si vous quittez pendant un quiz, vous pourrez reprendre là où vous en étiez. 
 
 ### Admin
 
-En tant qu'administrateur,vous pouvez vous connecter avec le nom : admin et le mot de passe : admin, vous pouvez aussi répondre aux différents quiz, mais vous avez en plus la possibilité de gérer ceux-ci en ajoutant un quiz avec le nombre de questions, le thèmes, le type, les diffents choix et la bonne réponse associée.
+En tant qu'administrateur,vous pouvez vous connecter avec les identifiants :  
+> **nom** : `admin`  
+> **mot de passe** : `admin`
+
+Vous pouvez aussi répondre aux différents quiz, mais vous avez en plus la possibilité de gérer ceux-ci en ajoutant un quiz avec le nombre de questions, le thèmes, le type, les diffents choix et la bonne réponse associée.
 
 Une fois le quiz créé, vous pourrez le modifier à tout moment. Chaque attribut est modifiable.
 
@@ -50,3 +54,5 @@ Enfin, l'administrateur pourra supprimer les quiz qu'il souhaite.
    cd src
    php -S localhost:8000
    ```
+2. **Modifier les identifiants de connexion à la base de données** :  
+   Dans `src/Config/ConfigBD.php`
