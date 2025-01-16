@@ -1,20 +1,25 @@
 <?php
 
-namespace Tools\type;
-use Tools\GenericFormElement;
+namespace Classes\Tools\type;
 
-abstract class Input extends GenericFormElement
+use Classes\Tools\GenericQuestion;
+
+abstract class Input extends GenericQuestion
 {
     public function render(): string
     {
-        return sprintf(
-            '<input type="%s" %s value="%s" name="form[%s]" id="%s"/>', 
-            $this->type,
-            $this->isRequired() ? 'required="required"' : '',
-            $this->getValue(),
-            $this->getName(),
-            $this->getId()
+        $html = '<div class="question-container">';
+        $html .= sprintf(
+            '<label for="%s">%s</label>',
+            $this->getId(), $this->label
         );
+        $html .= sprintf(
+            '<input type="%s" %s value="%s" name="answer" id="%s"/>',
+            $this->type->name, $this->isLocked() ? 'disabled' : '', $this->getValue(), $this->getId()
+        );
+        $html .= '</div>';
+        return $html;
     }
 }
+
 ?>

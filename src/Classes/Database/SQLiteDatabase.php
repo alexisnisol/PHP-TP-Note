@@ -1,11 +1,11 @@
 <?php
 
-namespace Database;
+namespace Classes\Database;
 
 use PDO;
 use PDOException;
 
-class SQLiteDatabase
+class SQLiteDatabase extends Database
 {
     private $db_file;
     private $pdo;
@@ -16,7 +16,7 @@ class SQLiteDatabase
         $this->getPDO();
     }
 
-    private function getPDO() {
+    public function getPDO() {
         if ($this->pdo === null) {
             try {
                 $this->pdo = new PDO("sqlite:{$this->db_file}");
@@ -28,29 +28,10 @@ class SQLiteDatabase
         return $this->pdo;
     }
 
-    public function query($statement) {
-        $pdo = $this->getPDO();
-        return $pdo->query($statement);
-    }
-
-    public function execute($statement) {
-        $pdo = $this->getPDO();
-        return $pdo->exec($statement);
-    }
-
-    public function prepare($statement, $options = []) {
-        $pdo = $this->getPDO();
-        return $pdo->prepare($statement, $options);
-    }
-
-    public function getForm() {
-        $pdo = $this->getPDO();
-        $query = $pdo->query('SELECT * FROM form');
-        return $query->fetchAll();
-    }
-
-    public function createDatabase() {
-        $this->execute(file_get_contents('Data/script.sql'));
+    public function databaseExists() {
+        $query = $this->query("SELECT name FROM sqlite_master WHERE type='table' AND name='QUIZ'");
+        $result = $query->fetch();
+        return $result;
     }
 
 }
