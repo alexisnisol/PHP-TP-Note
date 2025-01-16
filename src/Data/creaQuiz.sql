@@ -45,26 +45,14 @@ CREATE TABLE PARTICIPE
 
 
 INSERT INTO UTILISATEUR (uuid, nom_U, mdp, type_U) VALUES
-(1, 'adm', '$2y$10$7YSBWl8PeZkFBEmgaMhiQe.mdtAQcm2cJvmYpvoaZ0Dne4frTf2Ge', 'ADM');
+(1, 'admin', '$2y$10$qu4kz0lfn6FwNV08OCsTnOVZnrsTzFIM7pu3FAzGJrqItUyvxtksy', 'ADM');
 
---
--- insert into QUIZ values (1, 'Quiz 1', 'Math');
--- insert into QUIZ values (2, 'Quiz2', 'Math');
--- insert into QUIZ values (3, 'Quiz3', 'Math');
---
--- insert into QUESTION values (1, 1, 'checkbox', 'Question1', 'A;B;C;D', 'A;B');
--- insert into QUESTION values (2, 1, 'text', 'Question2', null, 'B');
--- insert into QUESTION values (3, 1, 'text', 'Question3', null, 'C');
---
--- insert into QUESTION values (1, 2, 'text', 'Question1', null, 'A');
--- insert into QUESTION values (2, 2, 'text', 'Question2', null, 'B');
--- insert into QUESTION values (3, 2, 'text', 'Question3', null, 'C');
---
 
 -- Insérer les quiz
 INSERT INTO QUIZ (id_Quiz, name_Q, theme) VALUES
                                               (1, 'Quiz Animaux', 'Animaux'),
-                                              (2, 'Quiz Villes', 'Villes');
+                                              (2, 'Quiz Villes', 'Villes'),
+                                              (3, "Les plaisirs d'Alexis", 'Alexis');
 
 -- Insérer les questions pour le Quiz Animaux
 INSERT INTO QUESTION (id_Q, id_Quiz, type_Q, label, choices, correct) VALUES
@@ -83,3 +71,6 @@ INSERT INTO QUESTION (id_Q, id_Quiz, type_Q, label, choices, correct) VALUES
 (5, 2, 'checkbox', 'Dans quelle ville peut-on voir la Statue de la Liberté ?', 'Paris;Londres;New York', 'New York');
 
 
+-- Insérer les questions pour le Quiz Villes
+INSERT INTO QUESTION (id_Q, id_Quiz, type_Q, label, choices, correct) VALUES
+(1, 3, 'checkbox', 'Quelle plaisirs Alexis enleverais parmie : ', 'Luxure;Sportve;Manger', 'Manger');

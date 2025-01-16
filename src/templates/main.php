@@ -73,7 +73,6 @@
         </H3>
         <p>02 38 49 44 62</p>
         <p>Rue d'issoudun, 45067 Orléans cedex 02</p>
-
     </div>
     <div class="col3">
         <H3>
